@@ -1,4 +1,4 @@
-package henorek.net.plantit;
+package net.henorek.plantit;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
