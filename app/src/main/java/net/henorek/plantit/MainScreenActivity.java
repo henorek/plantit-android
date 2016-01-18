@@ -6,10 +6,10 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 
-import com.viewpagerindicator.CirclePageIndicator;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import me.relex.circleindicator.CircleIndicator;
 
 public class MainScreenActivity extends FragmentActivity {
 
@@ -17,7 +17,7 @@ public class MainScreenActivity extends FragmentActivity {
     ViewPager viewPager;
 
     @Bind(R.id.fmsc_special_offer_indicator)
-    CirclePageIndicator _specialOfferIndicator;
+    CircleIndicator _specialOfferIndicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
