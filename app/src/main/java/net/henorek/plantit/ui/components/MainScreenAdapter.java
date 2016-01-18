@@ -1,8 +1,12 @@
-package net.henorek.plantit;
+package net.henorek.plantit.ui.components;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import net.henorek.plantit.ui.views.fragments.FragmentA;
+import net.henorek.plantit.ui.views.fragments.FragmentB;
+import net.henorek.plantit.ui.views.fragments.FragmentC;
 
 /**
  * Created by Jarek Jankowski.
