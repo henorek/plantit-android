@@ -3,4 +3,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/layout2"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_corners"
+        android:drawablePadding="5dp" />
+
+    <EditText
+        android:id="@+id/layout"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/layout2"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_corners"
+        android:drawablePadding="5dp" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corners_facebook" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corners_gplus" />
+
+    </LinearLayout>
+
 </RelativeLayout>
