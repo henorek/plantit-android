@@ -4,18 +4,18 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 
-
-import net.henorek.plantit.ui.components.MainScreenAdapter;
 import net.henorek.plantit.R;
-import net.henorek.plantit.ui.base.BasePlantitActivity;
+import net.henorek.plantit.ui.base.BaseActivity;
+import net.henorek.plantit.ui.components.MainScreenAdapter;
 import net.henorek.plantit.ui.presenters.MainScreenPresenter;
 import net.henorek.plantit.ui.utils.ActivityConfig;
 import net.henorek.plantit.ui.utils.ActivityConfigBuilder;
 
 import butterknife.Bind;
 import me.relex.circleindicator.CircleIndicator;
+import timber.log.Timber;
 
-public class MainScreenActivity extends BasePlantitActivity {
+public class MainScreenActivity extends BaseActivity {
 
     @Bind(R.id.pager)
     ViewPager viewPager;
@@ -38,6 +38,7 @@ public class MainScreenActivity extends BasePlantitActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         viewPager.setAdapter(new MainScreenAdapter(fragmentManager));
         _specialOfferIndicator.setViewPager(viewPager);
+        Timber.d("No el" + "Coś się zjebało i nie było mnie słychać więc powtórzę jeszcze raz");
     }
 
     @Override

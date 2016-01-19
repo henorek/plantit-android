@@ -7,11 +7,12 @@ import android.view.View;
 import net.henorek.plantit.ui.utils.ActivityConfig;
 
 import butterknife.ButterKnife;
+import timber.log.Timber;
 
 /**
  * Created by Jarek Jankowski on 2016-01-18.
  */
-public abstract class BasePlantitActivity<T extends BasePlantitPresenter<? extends IBasePlantitView>> extends FragmentActivity implements IBasePlantitView {
+public abstract class BaseActivity<T extends BasePresenter<? extends IBaseView>> extends FragmentActivity implements IBaseView {
 
     private ActivityConfig activityConfig;
 
@@ -21,9 +22,10 @@ public abstract class BasePlantitActivity<T extends BasePlantitPresenter<? exten
 
         super.onCreate(savedInstanceState);
         setContentView();
-        ButterKnife.bind(this);
+        initLibraries();
 
         prepareView(savedInstanceState);
+        addFragments();
     }
 
     protected abstract ActivityConfig getConfig();
@@ -37,5 +39,10 @@ public abstract class BasePlantitActivity<T extends BasePlantitPresenter<? exten
     private void setContentView(){
         View root = View.inflate(this, activityConfig.layoutId, null);
         setContentView(root);
+    }
+
+    private void initLibraries(){
+        ButterKnife.bind(this);
+        Timber.plant(new Timber.DebugTree());
     }
 }
