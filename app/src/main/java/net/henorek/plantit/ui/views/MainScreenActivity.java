@@ -6,7 +6,7 @@ import android.support.v4.view.ViewPager;
 
 import net.henorek.plantit.R;
 import net.henorek.plantit.ui.base.BaseActivity;
-import net.henorek.plantit.ui.components.MainScreenAdapter;
+import net.henorek.plantit.ui.components.adapters.MainScreenAdapter;
 import net.henorek.plantit.ui.presenters.MainScreenPresenter;
 import net.henorek.plantit.ui.utils.ActivityConfig;
 import net.henorek.plantit.ui.utils.ActivityConfigBuilder;

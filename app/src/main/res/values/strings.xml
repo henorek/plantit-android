@@ -1,6 +1,7 @@
 <resources>
+    //Application Name
     <string name="app_name">plant It!</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    //Logo
+    <string name="logo"><![CDATA[<font color=\'#FFFFFF\'>plan</font><font color=\'#8860d0\'>t</font><font color=\'#FFFFFF\'>It</font><font color=\'#8860d0\'>!</font>]]></string>
 </resources>

@@ -1,4 +1,4 @@
-package net.henorek.plantit.ui.components;
+package net.henorek.plantit.ui.components.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
