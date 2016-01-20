@@ -2,7 +2,7 @@
 
     <!-- Base application theme. -->
     <style name="ApplicationTheme" parent="@android:style/Theme.NoTitleBar.Fullscreen">
-        <item name="android:background">#8b7c5d</item>
+        <item name="android:background">@color/plantit_dark_gray</item>
     </style>
 
 </resources>

@@ -4,9 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import net.henorek.plantit.ui.views.fragments.FragmentA;
-import net.henorek.plantit.ui.views.fragments.FragmentB;
-import net.henorek.plantit.ui.views.fragments.FragmentC;
+import net.henorek.plantit.ui.views.fragments.LoginViewFragment;
+import net.henorek.plantit.ui.views.fragments.SettingsViewFragment;
+import net.henorek.plantit.ui.views.fragments.StartGameViewFragment;
+import net.henorek.plantit.ui.views.fragments.TrainingViewFragment;
 
 /**
  * Created by Jarek Jankowski.
@@ -14,8 +15,8 @@ import net.henorek.plantit.ui.views.fragments.FragmentC;
  */
 public class MainScreenAdapter extends FragmentPagerAdapter {
 
-    public MainScreenAdapter(FragmentManager fm) {
-        super(fm);
+    public MainScreenAdapter(FragmentManager fragmentManager) {
+        super(fragmentManager);
     }
 
     @Override
@@ -23,20 +24,24 @@ public class MainScreenAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = new FragmentA();
+                fragment = new LoginViewFragment();
                 break;
             case 1:
-                fragment = new FragmentB();
+                fragment = new StartGameViewFragment();
                 break;
             case 2:
-                fragment = new FragmentC();
+                fragment = new TrainingViewFragment();
                 break;
+            case 3:
+                fragment = new SettingsViewFragment();
+                break;
+
         }
         return fragment;
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 }

@@ -38,7 +38,6 @@ public class MainScreenActivity extends BaseActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         viewPager.setAdapter(new MainScreenAdapter(fragmentManager));
         _specialOfferIndicator.setViewPager(viewPager);
-        Timber.d("No el" + "Coś się zjebało i nie było mnie słychać więc powtórzę jeszcze raz");
     }
 
     @Override

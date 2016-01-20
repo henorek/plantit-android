@@ -10,14 +10,14 @@ import android.view.ViewGroup;
 import net.henorek.plantit.R;
 
 /**
- * Created by Jarek Jankowski.
+ * Created by Jarek Jankowski on 2016-01-20.
  * jarosz1994@gmail.com
  */
-public class FragmentB extends Fragment {
+public class SettingsViewFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_test01_view, container, false);
+        return inflater.inflate(R.layout.fragment_settings_view, container, false);
     }
 }
