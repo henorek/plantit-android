@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    //Menu colors
     <color name="plantit_light_gray">#434f5b</color>
     <color name="plantit_dark_gray">#2e2e2e</color>
     <color name="plantit_black">#000000</color>
     <color name="plantit_white">#f2f2f2</color>
     <color name="plantit_green">#8ab839</color>
 
+    //Content colors
+    <color name="plantit_light_sandy">#f7eac0</color>
+    <color name="plantit_dark_sandy">#f0bd89</color>
+    <color name="plantit_salmon">#e09d8b</color>
+    <color name="plantit_dirty_salmon">#73665c</color>
+    <color name="plantit_light_turquoise">#80bdb6</color>
+
+    //Social network colors
     <color name="facebook_unfocused">#3b5998</color>
     <color name="googleplus_unfocused">#DC4E41</color>
 </resources>

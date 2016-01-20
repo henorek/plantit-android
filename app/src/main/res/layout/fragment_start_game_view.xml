@@ -2,15 +2,56 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9f194c">
+    android:background="@color/plantit_light_sandy"
+    android:padding="@dimen/plantit_activity_margin">
 
-    <TextView
-        android:background="@drawable/shape_text_view_half_rounded_corners"
-        android:layout_width="300dp"
+    <Button
+        android:id="@+id/menuTest01"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:gravity="center"
-        android:text="Some shape tests"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_centerInParent="true"
-        android:textSize="30sp"/>
+        android:background="@drawable/shape_button_content_rounded_corners"
+        android:text="Test01"
+        android:textColor="@color/plantit_white"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/menuTest02"
+        android:layout_below="@id/menuTest01"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_button_content_rounded_corners"
+        android:text="Test02"
+        android:textColor="@color/plantit_white"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/menuTest03"
+        android:layout_below="@id/menuTest02"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_button_content_rounded_corners"
+        android:text="Test03"
+        android:textColor="@color/plantit_white"
+        android:layout_marginBottom="10dp"/>
+    <Button
+        android:layout_below="@id/menuTest03"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_button_content_rounded_corners"
+        android:text="Test04"
+        android:textColor="@color/plantit_white"
+        android:layout_marginBottom="10dp"/>
 
 </RelativeLayout>
