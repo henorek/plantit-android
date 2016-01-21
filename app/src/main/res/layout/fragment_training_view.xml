@@ -2,6 +2,35 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFCC00">
+    android:background="@color/plantit_light_gray"
+    >
 
+    <TextView
+        android:id="@+id/fsgv_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/plantit_activity_margin"
+        android:layout_marginBottom="12dp"
+        android:background="@color/plantit_light_gray"
+        android:text="TRAINING"
+        android:textSize="20sp"
+        android:textColor="@color/plantit_white"
+        android:textStyle="bold"/>
+
+    <View
+        android:layout_below="@id/fsgv_title_text"
+        android:layout_marginTop="11dp"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/plantit_green" />
+
+    <View
+        android:layout_below="@id/fsgv_title_text"
+        android:id="@+id/fsgv_checkpoint"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/plantit_activity_margin"
+        android:background="@drawable/shape_checkpoint_left"/>
 </RelativeLayout>

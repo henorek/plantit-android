@@ -2,56 +2,97 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/plantit_light_sandy"
-    android:padding="@dimen/plantit_activity_margin">
+    android:background="@color/plantit_light_gray">
 
-    <Button
-        android:id="@+id/menuTest01"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/shape_button_content_rounded_corners"
-        android:text="Test01"
+    <TextView
+        android:id="@+id/fsgv_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="@dimen/plantit_activity_margin"
+        android:background="@color/plantit_light_gray"
+        android:text="LET'S GO!"
         android:textColor="@color/plantit_white"
-        android:layout_marginBottom="10dp"/>
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/menuTest02"
-        android:layout_below="@id/menuTest01"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/shape_button_content_rounded_corners"
-        android:text="Test02"
-        android:textColor="@color/plantit_white"
-        android:layout_marginBottom="10dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fsgv_title_text"
+        android:background="@color/plantit_light_gray">
 
-    <Button
-        android:id="@+id/menuTest03"
-        android:layout_below="@id/menuTest02"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="11dp"
+            android:layout_weight="1"
+            android:background="@color/plantit_light_gray" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="11dp"
+            android:layout_weight="1"
+            android:background="@color/plantit_green" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/fsgv_checkpoint"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/fsgv_title_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/plantit_activity_margin"
+        android:background="@drawable/shape_checkpoint_left" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fsgv_checkpoint"
         android:layout_centerInParent="true"
-        android:background="@drawable/shape_button_content_rounded_corners"
-        android:text="Test03"
-        android:textColor="@color/plantit_white"
-        android:layout_marginBottom="10dp"/>
-    <Button
-        android:layout_below="@id/menuTest03"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/shape_button_content_rounded_corners"
-        android:text="Test04"
-        android:textColor="@color/plantit_white"
-        android:layout_marginBottom="10dp"/>
+        android:background="@color/plantit_light_gray"
+        android:orientation="vertical"
+        android:padding="@dimen/plantit_activity_margin">
+
+        <Button
+            android:id="@+id/menuTest02"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/shape_button_content_rounded_corners"
+            android:text="Test02"
+            android:textColor="@color/plantit_white" />
+
+        <Button
+            android:id="@+id/menuTest03"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/shape_button_content_rounded_corners"
+            android:text="Test03"
+            android:textColor="@color/plantit_white" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/shape_button_content_rounded_corners"
+            android:text="Test04"
+            android:textColor="@color/plantit_white" />
+
+        <Button
+            android:id="@+id/menuTest01"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/shape_button_content_rounded_corners"
+            android:text="Test01"
+            android:textColor="@color/plantit_white" />
+
+    </LinearLayout>
+
 
 </RelativeLayout>
