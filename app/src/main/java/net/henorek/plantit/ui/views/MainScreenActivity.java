@@ -43,20 +43,6 @@ public class MainScreenActivity extends BaseActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         viewPager.setAdapter(new MainScreenAdapter(fragmentManager));
         mainScreenViewIndicator.setViewPager(viewPager);
-
-        TacticsService service = ServiceFactory.createRetrofitService(TacticsService.class, TacticsService.TACTICS_REPOSITORY_ENDPOINT);
-        service.getTactics()
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(list -> {
-                    for (TacticsEntity tacticsEntity : list) {
-                        Timber.v(tacticsEntity.getTitle());
-                        Timber.v(tacticsEntity.getDescription());
-                        Timber.v(tacticsEntity.getIconUrl());
-                        Timber.v(tacticsEntity.getSide());
-                        Timber.v(tacticsEntity.getAuthor());
-                    }
-                });
     }
 
     @Override
