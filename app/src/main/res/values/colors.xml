@@ -14,6 +14,9 @@
     <color name="plantit_dirty_salmon">#73665c</color>
     <color name="plantit_light_turquoise">#80bdb6</color>
 
+    <color name="plantit_bg">#6c6976</color>
+
+
     //Social network colors
     <color name="facebook_unfocused">#3b5998</color>
     <color name="googleplus_unfocused">#DC4E41</color>
