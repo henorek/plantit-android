@@ -1,4 +1,4 @@
-package net.henorek.plantit.ui.components.controls;
+package net.henorek.plantit.ui.widgets.controls;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -13,19 +13,19 @@ import net.henorek.plantit.R;
  * Created by Jarek Jankowski.
  * jarosz1994@gmail.com
  */
-public class LogoView extends TextView {
+public class TitleView extends TextView {
 
-    public LogoView(Context context, AttributeSet attrs, int defStyle) {
+    public TitleView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         initialize();
     }
 
-    public LogoView(Context context, AttributeSet attrs) {
+    public TitleView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initialize();
     }
 
-    public LogoView(Context context) {
+    public TitleView(Context context) {
         super(context);
         initialize();
     }
@@ -33,8 +33,7 @@ public class LogoView extends TextView {
     private void initialize() {
         Spanned logo = Html.fromHtml(getResources().getString(R.string.logo));
         setText(logo);
-        Typeface typeface = Typeface.createFromAsset(getContext().getAssets(), "Raleway-ExtraBold.ttf");
+        Typeface typeface = Typeface.createFromAsset(getContext().getAssets(), "Raleway-Bold.ttf");
         setTypeface(typeface);
     }
-
 }

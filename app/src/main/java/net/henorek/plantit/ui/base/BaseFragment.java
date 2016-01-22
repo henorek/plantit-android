@@ -15,13 +15,22 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseFragment<T extends BasePresenter<? extends IBaseView>> extends Fragment implements IBaseView {
 
+    protected T presenter;
+    private IBaseView hostActivity;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        presenter = createPresenter();
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflateView(inflater, container);
         super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this, view);
-        prepareView(savedInstanceState); //kustomizacje widoku
+        prepareView(savedInstanceState);
         return view;
     }
 
@@ -34,4 +43,15 @@ public abstract class BaseFragment<T extends BasePresenter<? extends IBaseView>>
     protected abstract T createPresenter();
 
     protected abstract void prepareView(Bundle savedInstanceState);
+
+    @Override
+    public final T getPresenter() {
+        return presenter;
+    }
+
+    @Override
+    @Nullable
+    public BaseActivity getCurrentContext() {
+        return hostActivity.getCurrentContext();
+    }
 }

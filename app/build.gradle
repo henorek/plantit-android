@@ -95,6 +95,10 @@ dependencies {
     compile 'com.hannesdorfmann.mosby:viewstate:2.0.0'
     compile 'com.jakewharton.timber:timber:3.1.0'
 
+    compile 'com.hannesdorfmann.annotatedadapter:annotation:1.1.1'
+    compile 'com.hannesdorfmann.annotatedadapter:support-recyclerview:1.1.1'
+    apt 'com.hannesdorfmann.annotatedadapter:processor:1.1.1'
+
     testCompile testDpn.junit
     testCompile testDpn.mockito
     testCompile testDpn.robolectric

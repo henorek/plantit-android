@@ -1,4 +1,4 @@
-package net.henorek.plantit.ui.components.controls;
+package net.henorek.plantit.ui.widgets.controls;
 
 import android.content.Context;
 import android.graphics.Bitmap;

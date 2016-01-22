@@ -9,10 +9,10 @@ import net.henorek.plantit.data.models.TacticsEntity;
 import net.henorek.plantit.data.services.TacticsService;
 import net.henorek.plantit.data.utils.ServiceFactory;
 import net.henorek.plantit.ui.base.BaseActivity;
-import net.henorek.plantit.ui.components.adapters.MainScreenAdapter;
 import net.henorek.plantit.ui.presenters.MainScreenPresenter;
 import net.henorek.plantit.ui.utils.ActivityConfig;
 import net.henorek.plantit.ui.utils.ActivityConfigBuilder;
+import net.henorek.plantit.ui.widgets.adapters.MainScreenAdapter;
 
 import butterknife.Bind;
 import me.relex.circleindicator.CircleIndicator;

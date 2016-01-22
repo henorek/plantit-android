@@ -8,4 +8,9 @@ import net.henorek.plantit.ui.interfaces.ILoginView;
  * jarosz1994@gmail.com
  */
 public class LoginViewPresenter extends BasePresenter<ILoginView> {
+
+    @Override
+    public void loadData(boolean refresh) {
+
+    }
 }

@@ -12,7 +12,7 @@
         android:background="@drawable/shape_text_edit_rounded_corners"
         android:drawablePadding="5dp" />
 
-    <net.henorek.plantit.ui.components.controls.LogoView
+    <net.henorek.plantit.ui.widgets.controls.LogoView
         android:id="@+id/flv_logo_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

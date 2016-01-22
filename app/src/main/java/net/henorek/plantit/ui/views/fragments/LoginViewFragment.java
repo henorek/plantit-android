@@ -26,4 +26,5 @@ public class LoginViewFragment extends BaseFragment<LoginViewPresenter> {
     protected int getResourceId() {
         return R.layout.fragment_login_view;
     }
+
 }

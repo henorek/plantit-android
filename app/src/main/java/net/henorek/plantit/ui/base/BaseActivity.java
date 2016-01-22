@@ -14,6 +14,7 @@ import timber.log.Timber;
  */
 public abstract class BaseActivity<T extends BasePresenter<? extends IBaseView>> extends FragmentActivity implements IBaseView {
 
+    protected T presenter;
     private ActivityConfig activityConfig;
 
     @Override
@@ -21,6 +22,9 @@ public abstract class BaseActivity<T extends BasePresenter<? extends IBaseView>>
         activityConfig = getConfig();
 
         super.onCreate(savedInstanceState);
+
+        presenter = createPresenter();
+
         setContentView();
         initLibraries();
 
@@ -41,8 +45,19 @@ public abstract class BaseActivity<T extends BasePresenter<? extends IBaseView>>
         setContentView(root);
     }
 
-    private void initLibraries(){
+    private void initLibraries() {
         ButterKnife.bind(this);
         Timber.plant(new Timber.DebugTree());
+
+    }
+
+    @Override
+    public BaseActivity getCurrentContext() {
+        return this;
+    }
+
+    @Override
+    public T getPresenter() {
+        return presenter;
     }
 }
