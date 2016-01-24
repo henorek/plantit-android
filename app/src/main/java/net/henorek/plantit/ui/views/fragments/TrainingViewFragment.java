@@ -17,7 +17,7 @@ import net.henorek.plantit.R;
 import net.henorek.plantit.data.models.TacticsEntity;
 import net.henorek.plantit.data.modules.TacticsModule;
 import net.henorek.plantit.ui.interfaces.ITrainingView;
-import net.henorek.plantit.ui.presenters.TrainingViewPresenter;
+import net.henorek.plantit.ui.presenters.TrainingViewPresenterMvp;
 import net.henorek.plantit.ui.widgets.adapters.TacticsAdapter;
 import net.henorek.plantit.ui.widgets.components.DaggerTacticsComponent;
 import net.henorek.plantit.ui.widgets.components.TacticsComponent;
@@ -35,7 +35,7 @@ import timber.log.Timber;
  * Created by Jarek Jankowski.
  * jarosz1994@gmail.com
  */
-public class TrainingViewFragment extends MvpLceViewStateFragment<SwipeRefreshLayout, List<TacticsEntity>, ITrainingView, TrainingViewPresenter>
+public class TrainingViewFragment extends MvpLceViewStateFragment<SwipeRefreshLayout, List<TacticsEntity>, ITrainingView, TrainingViewPresenterMvp>
         implements ITrainingView, SwipeRefreshLayout.OnRefreshListener {
 
     @Bind(R.id.recyclerView)
@@ -101,7 +101,7 @@ public class TrainingViewFragment extends MvpLceViewStateFragment<SwipeRefreshLa
     }
 
     @Override
-    public TrainingViewPresenter createPresenter() {
+    public TrainingViewPresenterMvp createPresenter() {
         return tacticsComponent.presenter();
     }
 

@@ -1,7 +1,7 @@
 package net.henorek.plantit.ui.widgets.components;
 
 import net.henorek.plantit.data.modules.TacticsModule;
-import net.henorek.plantit.ui.presenters.TrainingViewPresenter;
+import net.henorek.plantit.ui.presenters.TrainingViewPresenterMvp;
 import net.henorek.plantit.ui.views.fragments.TrainingViewFragment;
 import net.henorek.plantit.ui.widgets.adapters.TacticsAdapter;
 
@@ -20,7 +20,7 @@ public interface TacticsComponent {
 
     void inject(TrainingViewFragment fragment);
 
-    TrainingViewPresenter presenter();
+    TrainingViewPresenterMvp presenter();
 
     TacticsAdapter adapter();
 }

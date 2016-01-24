@@ -4,11 +4,17 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 
+import com.hannesdorfmann.mosby.mvp.MvpActivity;
+import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
+import com.hannesdorfmann.mosby.mvp.MvpPresenter;
+import com.hannesdorfmann.mosby.mvp.MvpView;
+
 import net.henorek.plantit.R;
 import net.henorek.plantit.data.models.TacticsEntity;
 import net.henorek.plantit.data.services.TacticsService;
 import net.henorek.plantit.data.utils.ServiceFactory;
 import net.henorek.plantit.ui.base.BaseActivity;
+import net.henorek.plantit.ui.base.BaseMvpActivity;
 import net.henorek.plantit.ui.presenters.MainScreenPresenter;
 import net.henorek.plantit.ui.utils.ActivityConfig;
 import net.henorek.plantit.ui.utils.ActivityConfigBuilder;
@@ -20,7 +26,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import timber.log.Timber;
 
-public class MainScreenActivity extends BaseActivity {
+public class MainScreenActivity extends BaseMvpActivity {
 
     @Bind(R.id.ams_main_pager)
     ViewPager viewPager;
@@ -34,7 +40,7 @@ public class MainScreenActivity extends BaseActivity {
     }
 
     @Override
-    protected MainScreenPresenter createPresenter() {
+    public MainScreenPresenter createPresenter() {
         return new MainScreenPresenter();
     }
 
@@ -49,5 +55,7 @@ public class MainScreenActivity extends BaseActivity {
     protected void addFragments() {
 
     }
+
+
 
 }

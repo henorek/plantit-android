@@ -14,7 +14,7 @@ import rx.schedulers.Schedulers;
  * jarosz1994@gmail.com
  */
 
-public abstract class BaseRxPresenter<V extends MvpLceView<M>, M>
+public abstract class BaseMvpRxPresenter<V extends MvpLceView<M>, M>
         extends MvpBasePresenter<V>
         implements MvpPresenter<V> {
 
@@ -42,17 +42,17 @@ public abstract class BaseRxPresenter<V extends MvpLceView<M>, M>
 
             @Override
             public void onCompleted() {
-                BaseRxPresenter.this.onCompleted();
+                BaseMvpRxPresenter.this.onCompleted();
             }
 
             @Override
             public void onError(Throwable e) {
-                BaseRxPresenter.this.onError(e, ptr);
+                BaseMvpRxPresenter.this.onError(e, ptr);
             }
 
             @Override
             public void onNext(M m) {
-                BaseRxPresenter.this.onNext(m);
+                BaseMvpRxPresenter.this.onNext(m);
             }
         };
 
