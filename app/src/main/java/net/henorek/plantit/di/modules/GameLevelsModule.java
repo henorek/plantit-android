@@ -49,4 +49,5 @@ public class GameLevelsModule {
     public ErrorMessageDeterminer providesErrorMessageDeterminer() {
         return new ErrorMessageDeterminer();
     }
+
 }
