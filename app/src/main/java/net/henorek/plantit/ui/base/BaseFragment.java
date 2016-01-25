@@ -11,8 +11,9 @@ import com.hannesdorfmann.mosby.mvp.delegate.BaseMvpDelegateCallback;
 
 import butterknife.ButterKnife;
 
-public abstract class BaseFragment<V extends IBaseView, P extends BasePresenter<V>> extends MvpFragment<V, P>
-        implements BaseMvpDelegateCallback<V, P>, IBaseView {
+public abstract class BaseFragment<VIEW extends IBaseView, PRESENTER extends BasePresenter<VIEW>>
+        extends MvpFragment<VIEW, PRESENTER>
+        implements BaseMvpDelegateCallback<VIEW, PRESENTER>, IBaseView {
 
     private IBaseView hostActivity;
 
@@ -36,8 +37,8 @@ public abstract class BaseFragment<V extends IBaseView, P extends BasePresenter<
 
     @Override
     @Nullable
-    public BaseActivity getCurrentContext() {
-        return hostActivity.getCurrentContext();
+    public BaseActivity getInstance() {
+        return hostActivity.getInstance();
     }
 
 }

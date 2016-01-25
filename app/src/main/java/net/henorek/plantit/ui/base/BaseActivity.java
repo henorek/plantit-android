@@ -11,7 +11,9 @@ import net.henorek.plantit.ui.utils.ActivityConfig;
 import butterknife.ButterKnife;
 import timber.log.Timber;
 
-public abstract class BaseActivity<V extends IBaseView, P extends BasePresenter<V>> extends MvpActivity<V, P> implements ActivityMvpDelegateCallback<V, P>, IBaseView {
+public abstract class BaseActivity<VIEW extends IBaseView, PRESENTER extends BasePresenter<VIEW>>
+        extends MvpActivity<VIEW, PRESENTER>
+        implements ActivityMvpDelegateCallback<VIEW, PRESENTER>, IBaseView {
 
     private ActivityConfig activityConfig;
 
@@ -42,11 +44,10 @@ public abstract class BaseActivity<V extends IBaseView, P extends BasePresenter<
     private void initLibraries() {
         ButterKnife.bind(this);
         Timber.plant(new Timber.DebugTree());
-
     }
 
     @Override
-    public BaseActivity getCurrentContext() {
+    public BaseActivity getInstance() {
         return this;
     }
 }

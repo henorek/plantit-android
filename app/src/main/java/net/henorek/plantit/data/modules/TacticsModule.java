@@ -16,9 +16,10 @@ import retrofit.Retrofit;
 import retrofit.RxJavaCallAdapterFactory;
 
 @Module
+@Singleton
 public class TacticsModule {
 
-    private Context context;
+    private final Context context;
 
     public TacticsModule(Context context) {
         this.context = context;
@@ -30,13 +31,11 @@ public class TacticsModule {
     }
 
     @Provides
-    @Singleton
     Picasso providesPicasso() {
         return Picasso.with(context);
     }
 
     @Provides
-    @Singleton
     public TacticsService providesTacticsService() {
         Retrofit restAdapter = new Retrofit.Builder()
                 .baseUrl(TacticsService.TACTICS_REPOSITORY_ENDPOINT)
@@ -47,7 +46,6 @@ public class TacticsModule {
     }
 
     @Provides
-    @Singleton
     public ErrorMessageDeterminer providesErrorMessageDeterminer() {
         return new ErrorMessageDeterminer();
     }

@@ -30,7 +30,6 @@ import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import timber.log.Timber;
 
 public class TrainingViewFragment extends MvpLceViewStateFragment<SwipeRefreshLayout, List<TacticsEntity>, ITrainingView, TrainingViewPresenter>
         implements ITrainingView, SwipeRefreshLayout.OnRefreshListener {
@@ -94,7 +93,6 @@ public class TrainingViewFragment extends MvpLceViewStateFragment<SwipeRefreshLa
 
     @Override
     protected String getErrorMessage(Throwable e, boolean pullToRefresh) {
-        Timber.v(e, "O co chodzi?");
         return errorMessageDeterminer.getErrorMessage(e, pullToRefresh);
     }
 

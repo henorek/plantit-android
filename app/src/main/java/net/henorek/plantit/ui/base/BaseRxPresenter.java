@@ -9,9 +9,9 @@ import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public abstract class BaseRxPresenter<V extends MvpLceView<M>, M> extends MvpBasePresenter<V> implements MvpPresenter<V> {
+public abstract class BaseRxPresenter<VIEW extends MvpLceView<MODEL>, MODEL> extends MvpBasePresenter<VIEW> implements MvpPresenter<VIEW> {
 
-    protected Subscriber<M> subscriber;
+    protected Subscriber<MODEL> subscriber;
 
     protected void unsubscribe() {
         if (subscriber != null && !subscriber.isUnsubscribed()) {
@@ -21,7 +21,7 @@ public abstract class BaseRxPresenter<V extends MvpLceView<M>, M> extends MvpBas
         subscriber = null;
     }
 
-    public void subscribe(Observable<M> observable, final boolean pullToRefresh) {
+    public void subscribe(Observable<MODEL> observable, final boolean pullToRefresh) {
 
         if (isViewAttached()) {
             getView().showLoading(pullToRefresh);
@@ -29,7 +29,7 @@ public abstract class BaseRxPresenter<V extends MvpLceView<M>, M> extends MvpBas
 
         unsubscribe();
 
-        subscriber = new Subscriber<M>() {
+        subscriber = new Subscriber<MODEL>() {
 
             private boolean ptr = pullToRefresh;
 
@@ -44,8 +44,8 @@ public abstract class BaseRxPresenter<V extends MvpLceView<M>, M> extends MvpBas
             }
 
             @Override
-            public void onNext(M m) {
-                BaseRxPresenter.this.onNext(m);
+            public void onNext(MODEL MODEL) {
+                BaseRxPresenter.this.onNext(MODEL);
             }
         };
 
@@ -68,7 +68,7 @@ public abstract class BaseRxPresenter<V extends MvpLceView<M>, M> extends MvpBas
         unsubscribe();
     }
 
-    protected void onNext(M data) {
+    protected void onNext(MODEL data) {
         if (isViewAttached()) {
             getView().setData(data);
         }

@@ -4,6 +4,6 @@ import com.hannesdorfmann.mosby.mvp.MvpView;
 
 public interface IBaseView extends MvpView {
 
-    BaseActivity getCurrentContext();
+    BaseActivity getInstance();
 
 }
