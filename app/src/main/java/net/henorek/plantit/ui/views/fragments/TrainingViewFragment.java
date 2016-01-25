@@ -22,7 +22,7 @@ import net.henorek.plantit.ui.presenters.TrainingViewPresenter;
 import net.henorek.plantit.ui.widgets.adapters.TacticsAdapter;
 import net.henorek.plantit.ui.widgets.components.DaggerTacticsComponent;
 import net.henorek.plantit.ui.widgets.components.TacticsComponent;
-import net.henorek.plantit.ui.widgets.controls.ErrorMessageDeterminer;
+import net.henorek.plantit.ui.widgets.controls.utils.ErrorMessageDeterminer;
 
 import java.util.List;
 

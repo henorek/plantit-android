@@ -1,4 +1,4 @@
-package net.henorek.plantit.ui.widgets.controls;
+package net.henorek.plantit.ui.widgets.controls.utils;
 
 import android.accounts.NetworkErrorException;
 

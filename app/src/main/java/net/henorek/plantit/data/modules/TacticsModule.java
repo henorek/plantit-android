@@ -5,7 +5,7 @@ import android.content.Context;
 import com.squareup.picasso.Picasso;
 
 import net.henorek.plantit.data.services.TacticsService;
-import net.henorek.plantit.ui.widgets.controls.ErrorMessageDeterminer;
+import net.henorek.plantit.ui.widgets.controls.utils.ErrorMessageDeterminer;
 
 import javax.inject.Singleton;
 
