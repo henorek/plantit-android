@@ -12,5 +12,4 @@ public class Navigator {
         context.startActivity(intent);
     }
 
-
 }

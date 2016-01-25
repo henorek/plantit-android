@@ -9,6 +9,8 @@ import net.henorek.plantit.ui.interfaces.IMatchmakingView;
 import net.henorek.plantit.ui.presenters.MatchmakingPresenter;
 import net.henorek.plantit.ui.utils.ActivityConfig;
 import net.henorek.plantit.ui.utils.ActivityConfigBuilder;
+import net.henorek.plantit.ui.utils.FragmentFactory;
+import net.henorek.plantit.ui.views.fragments.SelectMapViewFragment;
 
 public class MatchmakingActivity extends BaseActivity<IMatchmakingView, MatchmakingPresenter> implements IMatchmakingView {
 
@@ -24,7 +26,7 @@ public class MatchmakingActivity extends BaseActivity<IMatchmakingView, Matchmak
 
     @Override
     protected void addFragments() {
-
+        getSupportFragmentManager().beginTransaction().add(R.id.choose_map_fragment, FragmentFactory.createFragmentByClass(SelectMapViewFragment.class, new Bundle())).commitAllowingStateLoss();
     }
 
     @NonNull

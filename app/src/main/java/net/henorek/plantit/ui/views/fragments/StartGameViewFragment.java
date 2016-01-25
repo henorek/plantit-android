@@ -26,7 +26,7 @@ public class StartGameViewFragment extends BaseFragment<IStartGameView, StartGam
         return new StartGamePresenter();
     }
 
-    @OnClick((R.id.menuStart))
+    @OnClick(R.id.menuStart)
     public void goToStart() {
         Navigator.navigateToMatchmakingActivity(getContext());
     }

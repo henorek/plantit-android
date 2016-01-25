@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,13 +15,13 @@ import com.hannesdorfmann.mosby.mvp.viewstate.lce.MvpLceViewStateFragment;
 import com.hannesdorfmann.mosby.mvp.viewstate.lce.data.RetainingLceViewState;
 
 import net.henorek.plantit.R;
-import net.henorek.plantit.data.models.TacticsEntity;
-import net.henorek.plantit.data.modules.TacticsModule;
-import net.henorek.plantit.ui.interfaces.ITrainingView;
-import net.henorek.plantit.ui.presenters.TrainingViewPresenter;
-import net.henorek.plantit.ui.widgets.adapters.TacticsAdapter;
-import net.henorek.plantit.ui.widgets.components.DaggerTacticsComponent;
-import net.henorek.plantit.ui.widgets.components.TacticsComponent;
+import net.henorek.plantit.data.models.GameLevel;
+import net.henorek.plantit.data.modules.GameLevelsModule;
+import net.henorek.plantit.ui.interfaces.ISelectMapView;
+import net.henorek.plantit.ui.presenters.SelectMapPresenter;
+import net.henorek.plantit.ui.widgets.adapters.GameLevelsAdapter;
+import net.henorek.plantit.ui.widgets.components.DaggerGameLevelsComponent;
+import net.henorek.plantit.ui.widgets.components.GameLevelsComponent;
 import net.henorek.plantit.ui.widgets.controls.utils.ErrorMessageDeterminer;
 
 import java.util.List;
@@ -31,27 +31,27 @@ import javax.inject.Inject;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class TrainingViewFragment extends MvpLceViewStateFragment<SwipeRefreshLayout, List<TacticsEntity>, ITrainingView, TrainingViewPresenter>
-        implements ITrainingView, SwipeRefreshLayout.OnRefreshListener {
+public class SelectMapViewFragment extends MvpLceViewStateFragment<SwipeRefreshLayout, List<GameLevel>, ISelectMapView, SelectMapPresenter>
+        implements ISelectMapView, SwipeRefreshLayout.OnRefreshListener {
 
-    @Bind(R.id.recyclerView)
-    RecyclerView recyclerView;
+    @Bind(R.id.fsmv_select_map_view)
+    RecyclerView mapsView;
 
     @Inject
     ErrorMessageDeterminer errorMessageDeterminer;
-    TacticsComponent tacticsComponent;
-    TacticsAdapter adapter;
+    GameLevelsComponent gameLevelsComponent;
+    GameLevelsAdapter adapter;
 
     protected void injectDependencies() {
-        tacticsComponent = DaggerTacticsComponent.builder().tacticsModule(new TacticsModule(getActivity())).build();
-        tacticsComponent.inject(this);
+        gameLevelsComponent = DaggerGameLevelsComponent.builder().gameLevelsModule(new GameLevelsModule(getActivity())).build();
+        gameLevelsComponent.inject(this);
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         injectDependencies();
-        return inflater.inflate(R.layout.fragment_training_view, container, false);
+        return inflater.inflate(R.layout.fragment_select_map_view, container, false);
     }
 
     @Override
@@ -64,9 +64,9 @@ public class TrainingViewFragment extends MvpLceViewStateFragment<SwipeRefreshLa
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
-        adapter = tacticsComponent.adapter();
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        adapter = gameLevelsComponent.adapter();
+        mapsView.setAdapter(adapter);
+        mapsView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
     }
 
     @Override
@@ -77,18 +77,18 @@ public class TrainingViewFragment extends MvpLceViewStateFragment<SwipeRefreshLa
 
     @NonNull
     @Override
-    public LceViewState<List<TacticsEntity>, ITrainingView> createViewState() {
+    public LceViewState<List<GameLevel>, ISelectMapView> createViewState() {
         return new RetainingLceViewState<>();
     }
 
     @Override
-    public List<TacticsEntity> getData() {
-        return adapter.getTactics();
+    public List<GameLevel> getData() {
+        return adapter.getGameLevels();
     }
 
     @Override
-    public void setData(List<TacticsEntity> data) {
-        adapter.setTactics(data);
+    public void setData(List<GameLevel> data) {
+        adapter.setGameLevels(data);
         adapter.notifyDataSetChanged();
     }
 
@@ -99,13 +99,13 @@ public class TrainingViewFragment extends MvpLceViewStateFragment<SwipeRefreshLa
 
     @NonNull
     @Override
-    public TrainingViewPresenter createPresenter() {
-        return tacticsComponent.presenter();
+    public SelectMapPresenter createPresenter() {
+        return gameLevelsComponent.presenter();
     }
 
     @Override
     public void loadData(boolean pullToRefresh) {
-        presenter.loadTactics(pullToRefresh);
+        presenter.loadGameLevels(pullToRefresh);
     }
 
     @Override

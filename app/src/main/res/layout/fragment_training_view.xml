@@ -44,6 +44,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/fsgv_checkpoint"
         android:background="@color/plantit_bg"
+        android:enabled="false"
         android:paddingLeft="@dimen/plantit_activity_margin"
         android:paddingRight="@dimen/plantit_activity_margin">
 
