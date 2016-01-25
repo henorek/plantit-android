@@ -15,10 +15,6 @@ import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;
 import retrofit.RxJavaCallAdapterFactory;
 
-/**
- * Created by Jarek Jankowski on 2016-01-22.
- * jarosz1994@gmail.com
- */
 @Module
 public class TacticsModule {
 

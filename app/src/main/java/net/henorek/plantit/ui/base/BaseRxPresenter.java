@@ -9,14 +9,7 @@ import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-/**
- * Created by Jarek Jankowski on 2016-01-22.
- * jarosz1994@gmail.com
- */
-
-public abstract class BaseMvpRxPresenter<V extends MvpLceView<M>, M>
-        extends MvpBasePresenter<V>
-        implements MvpPresenter<V> {
+public abstract class BaseRxPresenter<V extends MvpLceView<M>, M> extends MvpBasePresenter<V> implements MvpPresenter<V> {
 
     protected Subscriber<M> subscriber;
 
@@ -42,17 +35,17 @@ public abstract class BaseMvpRxPresenter<V extends MvpLceView<M>, M>
 
             @Override
             public void onCompleted() {
-                BaseMvpRxPresenter.this.onCompleted();
+                BaseRxPresenter.this.onCompleted();
             }
 
             @Override
             public void onError(Throwable e) {
-                BaseMvpRxPresenter.this.onError(e, ptr);
+                BaseRxPresenter.this.onError(e, ptr);
             }
 
             @Override
             public void onNext(M m) {
-                BaseMvpRxPresenter.this.onNext(m);
+                BaseRxPresenter.this.onNext(m);
             }
         };
 

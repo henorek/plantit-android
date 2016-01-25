@@ -9,10 +9,6 @@ import android.view.ViewGroup;
 
 import net.henorek.plantit.R;
 
-/**
- * Created by Jarek Jankowski.
- * jarosz1994@gmail.com
- */
 public class StartGameViewFragment extends Fragment {
 
     @Nullable

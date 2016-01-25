@@ -1,6 +1,7 @@
 package net.henorek.plantit.ui.views.fragments;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,7 +18,7 @@ import net.henorek.plantit.R;
 import net.henorek.plantit.data.models.TacticsEntity;
 import net.henorek.plantit.data.modules.TacticsModule;
 import net.henorek.plantit.ui.interfaces.ITrainingView;
-import net.henorek.plantit.ui.presenters.TrainingViewPresenterMvp;
+import net.henorek.plantit.ui.presenters.TrainingViewPresenter;
 import net.henorek.plantit.ui.widgets.adapters.TacticsAdapter;
 import net.henorek.plantit.ui.widgets.components.DaggerTacticsComponent;
 import net.henorek.plantit.ui.widgets.components.TacticsComponent;
@@ -31,11 +32,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import timber.log.Timber;
 
-/**
- * Created by Jarek Jankowski.
- * jarosz1994@gmail.com
- */
-public class TrainingViewFragment extends MvpLceViewStateFragment<SwipeRefreshLayout, List<TacticsEntity>, ITrainingView, TrainingViewPresenterMvp>
+public class TrainingViewFragment extends MvpLceViewStateFragment<SwipeRefreshLayout, List<TacticsEntity>, ITrainingView, TrainingViewPresenter>
         implements ITrainingView, SwipeRefreshLayout.OnRefreshListener {
 
     @Bind(R.id.recyclerView)
@@ -78,6 +75,7 @@ public class TrainingViewFragment extends MvpLceViewStateFragment<SwipeRefreshLa
         ButterKnife.unbind(this);
     }
 
+    @NonNull
     @Override
     public LceViewState<List<TacticsEntity>, ITrainingView> createViewState() {
         return new RetainingLceViewState<>();
@@ -100,8 +98,9 @@ public class TrainingViewFragment extends MvpLceViewStateFragment<SwipeRefreshLa
         return errorMessageDeterminer.getErrorMessage(e, pullToRefresh);
     }
 
+    @NonNull
     @Override
-    public TrainingViewPresenterMvp createPresenter() {
+    public TrainingViewPresenter createPresenter() {
         return tacticsComponent.presenter();
     }
 

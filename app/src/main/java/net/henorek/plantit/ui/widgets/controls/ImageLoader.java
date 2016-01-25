@@ -16,7 +16,6 @@ import com.squareup.picasso.Target;
 
 import java.util.ArrayList;
 
-
 //TODO dostowwac i zaimplementowac cache
 public class ImageLoader {
 
@@ -25,7 +24,7 @@ public class ImageLoader {
     private Picasso _piccasso = null;
     private int _drawableLoading;
     private int _drawableBroken;
-    private ArrayList<Target> _targets = new ArrayList<>();//referencja do targetow
+    private ArrayList<Target> _targets = new ArrayList<>();
 
     public ImageLoader(Context context) {
 //        init(context, R.drawable.cover_loading, R.drawable.cover_broken);

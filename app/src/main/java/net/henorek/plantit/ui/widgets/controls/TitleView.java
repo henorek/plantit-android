@@ -9,10 +9,6 @@ import android.widget.TextView;
 
 import net.henorek.plantit.R;
 
-/**
- * Created by Jarek Jankowski.
- * jarosz1994@gmail.com
- */
 public class TitleView extends TextView {
 
     public TitleView(Context context, AttributeSet attrs, int defStyle) {

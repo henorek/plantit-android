@@ -9,10 +9,6 @@ import android.view.ViewGroup;
 
 import net.henorek.plantit.R;
 
-/**
- * Created by Jarek Jankowski on 2016-01-20.
- * jarosz1994@gmail.com
- */
 public class SettingsViewFragment extends Fragment {
 
     @Nullable

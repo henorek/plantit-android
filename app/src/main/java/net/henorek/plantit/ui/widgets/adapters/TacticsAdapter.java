@@ -19,10 +19,6 @@ import javax.inject.Inject;
 import lombok.Getter;
 import lombok.Setter;
 
-/**
- * Created by Jarek Jankowski on 2016-01-22.
- * jarosz1994@gmail.com
- */
 public class TacticsAdapter extends SupportAnnotatedAdapter implements TacticsAdapterBinder {
 
     @ViewType(

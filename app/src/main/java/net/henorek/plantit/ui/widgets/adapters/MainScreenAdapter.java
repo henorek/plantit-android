@@ -9,10 +9,6 @@ import net.henorek.plantit.ui.views.fragments.SettingsViewFragment;
 import net.henorek.plantit.ui.views.fragments.StartGameViewFragment;
 import net.henorek.plantit.ui.views.fragments.TrainingViewFragment;
 
-/**
- * Created by Jarek Jankowski.
- * jarosz1994@gmail.com
- */
 public class MainScreenAdapter extends FragmentPagerAdapter {
 
     public MainScreenAdapter(FragmentManager fragmentManager) {

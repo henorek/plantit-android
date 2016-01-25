@@ -1,11 +1,7 @@
-//package net.henorek.plantit.ui.base;
-//
-///**
-// * Created by Jarek Jankowski on 2016-01-18.
-// * jarosz1994@gmail.com
-// */
-//public abstract class BasePresenter<PRESENTER extends IBaseView> {
-//
-//    public abstract void loadData(boolean refresh);
-//
-//}
+package net.henorek.plantit.ui.base;
+
+import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
+import com.hannesdorfmann.mosby.mvp.MvpPresenter;
+
+public abstract class BasePresenter<V extends IBaseView> extends MvpBasePresenter<V> implements MvpPresenter<V> {
+}

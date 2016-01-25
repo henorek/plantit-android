@@ -4,10 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-/**
- * Created by Jarek Jankowski on 2016-01-20.
- * jarosz1994@gmail.com
- */
 public class LoadedImageView extends ImageView {
 
     private ImageLoader _imageLoader;

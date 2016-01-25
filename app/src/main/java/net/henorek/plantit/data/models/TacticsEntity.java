@@ -1,18 +1,8 @@
 package net.henorek.plantit.data.models;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
-/**
- * Created by Jarek Jankowski on 2016-01-21.
- * jarosz1994@gmail.com
- */
-@Getter
-@Setter
-@ToString
-@EqualsAndHashCode
+@Data
 public class TacticsEntity {
 
     private long id;

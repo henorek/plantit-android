@@ -1,8 +1,5 @@
 package net.henorek.plantit.ui.utils;
 
-/**
- * Created by Jarek Jankowski on 2016-01-18.
- */
 public class ActivityConfigBuilder {
     protected ActivityConfig activityConfig = createConfig();
 
