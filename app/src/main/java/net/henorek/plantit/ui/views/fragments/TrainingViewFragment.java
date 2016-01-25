@@ -16,12 +16,12 @@ import com.hannesdorfmann.mosby.mvp.viewstate.lce.data.RetainingLceViewState;
 
 import net.henorek.plantit.R;
 import net.henorek.plantit.data.models.TacticsEntity;
-import net.henorek.plantit.data.modules.TacticsModule;
+import net.henorek.plantit.di.components.DaggerTacticsComponent;
+import net.henorek.plantit.di.components.TacticsComponent;
+import net.henorek.plantit.di.modules.TacticsModule;
 import net.henorek.plantit.ui.interfaces.ITrainingView;
 import net.henorek.plantit.ui.presenters.TrainingViewPresenter;
 import net.henorek.plantit.ui.widgets.adapters.TacticsAdapter;
-import net.henorek.plantit.ui.widgets.components.DaggerTacticsComponent;
-import net.henorek.plantit.ui.widgets.components.TacticsComponent;
 import net.henorek.plantit.ui.widgets.controls.utils.ErrorMessageDeterminer;
 
 import java.util.List;

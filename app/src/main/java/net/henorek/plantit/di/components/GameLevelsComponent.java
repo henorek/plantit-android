@@ -1,6 +1,6 @@
-package net.henorek.plantit.ui.widgets.components;
+package net.henorek.plantit.di.components;
 
-import net.henorek.plantit.data.modules.GameLevelsModule;
+import net.henorek.plantit.di.modules.GameLevelsModule;
 import net.henorek.plantit.ui.presenters.SelectMapPresenter;
 import net.henorek.plantit.ui.views.fragments.SelectMapViewFragment;
 import net.henorek.plantit.ui.widgets.adapters.GameLevelsAdapter;

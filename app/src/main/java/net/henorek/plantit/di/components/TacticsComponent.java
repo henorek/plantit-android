@@ -1,6 +1,6 @@
-package net.henorek.plantit.ui.widgets.components;
+package net.henorek.plantit.di.components;
 
-import net.henorek.plantit.data.modules.TacticsModule;
+import net.henorek.plantit.di.modules.TacticsModule;
 import net.henorek.plantit.ui.presenters.TrainingViewPresenter;
 import net.henorek.plantit.ui.views.fragments.TrainingViewFragment;
 import net.henorek.plantit.ui.widgets.adapters.TacticsAdapter;

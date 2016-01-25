@@ -16,12 +16,12 @@ import com.hannesdorfmann.mosby.mvp.viewstate.lce.data.RetainingLceViewState;
 
 import net.henorek.plantit.R;
 import net.henorek.plantit.data.models.GameLevel;
-import net.henorek.plantit.data.modules.GameLevelsModule;
+import net.henorek.plantit.di.components.DaggerGameLevelsComponent;
+import net.henorek.plantit.di.components.GameLevelsComponent;
+import net.henorek.plantit.di.modules.GameLevelsModule;
 import net.henorek.plantit.ui.interfaces.ISelectMapView;
 import net.henorek.plantit.ui.presenters.SelectMapPresenter;
 import net.henorek.plantit.ui.widgets.adapters.GameLevelsAdapter;
-import net.henorek.plantit.ui.widgets.components.DaggerGameLevelsComponent;
-import net.henorek.plantit.ui.widgets.components.GameLevelsComponent;
 import net.henorek.plantit.ui.widgets.controls.utils.ErrorMessageDeterminer;
 
 import java.util.List;

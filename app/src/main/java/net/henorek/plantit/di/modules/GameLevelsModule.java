@@ -1,13 +1,11 @@
-package net.henorek.plantit.data.modules;
+package net.henorek.plantit.di.modules;
 
 import android.content.Context;
 
 import com.squareup.picasso.Picasso;
 
-import net.henorek.plantit.data.services.TacticsService;
+import net.henorek.plantit.data.services.GameLevelsService;
 import net.henorek.plantit.ui.widgets.controls.utils.ErrorMessageDeterminer;
-
-import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -16,12 +14,11 @@ import retrofit.Retrofit;
 import retrofit.RxJavaCallAdapterFactory;
 
 @Module
-@Singleton
-public class TacticsModule {
+public class GameLevelsModule {
 
     private final Context context;
 
-    public TacticsModule(Context context) {
+    public GameLevelsModule(Context context) {
         this.context = context;
     }
 
@@ -36,18 +33,17 @@ public class TacticsModule {
     }
 
     @Provides
-    public TacticsService providesTacticsService() {
+    public GameLevelsService providesGameLevelsService() {
         Retrofit restAdapter = new Retrofit.Builder()
-                .baseUrl(TacticsService.TACTICS_REPOSITORY_ENDPOINT)
+                .baseUrl(GameLevelsService.GAME_LEVELS_REPOSITORY_ENDPOINT)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
-        return restAdapter.create(TacticsService.class);
+        return restAdapter.create(GameLevelsService.class);
     }
 
     @Provides
     public ErrorMessageDeterminer providesErrorMessageDeterminer() {
         return new ErrorMessageDeterminer();
     }
-
 }
