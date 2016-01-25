@@ -7,6 +7,8 @@ import com.squareup.picasso.Picasso;
 import net.henorek.plantit.data.services.GameLevelsService;
 import net.henorek.plantit.ui.widgets.controls.utils.ErrorMessageDeterminer;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 import retrofit.GsonConverterFactory;
@@ -14,6 +16,7 @@ import retrofit.Retrofit;
 import retrofit.RxJavaCallAdapterFactory;
 
 @Module
+@Singleton
 public class GameLevelsModule {
 
     private final Context context;
