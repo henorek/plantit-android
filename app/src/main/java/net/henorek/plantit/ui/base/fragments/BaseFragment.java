@@ -1,4 +1,4 @@
-package net.henorek.plantit.ui.base;
+package net.henorek.plantit.ui.base.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,10 @@ import android.view.ViewGroup;
 
 import com.hannesdorfmann.mosby.mvp.MvpFragment;
 import com.hannesdorfmann.mosby.mvp.delegate.BaseMvpDelegateCallback;
+
+import net.henorek.plantit.ui.base.activities.BaseActivity;
+import net.henorek.plantit.ui.base.presenters.BasePresenter;
+import net.henorek.plantit.ui.base.views.IBaseView;
 
 import butterknife.ButterKnife;
 

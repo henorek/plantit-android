@@ -1,4 +1,4 @@
-package net.henorek.plantit.ui.base;
+package net.henorek.plantit.ui.base.activities;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,6 +6,8 @@ import android.view.View;
 import com.hannesdorfmann.mosby.mvp.MvpActivity;
 import com.hannesdorfmann.mosby.mvp.delegate.ActivityMvpDelegateCallback;
 
+import net.henorek.plantit.ui.base.presenters.BasePresenter;
+import net.henorek.plantit.ui.base.views.IBaseView;
 import net.henorek.plantit.ui.utils.ActivityConfig;
 
 import butterknife.ButterKnife;

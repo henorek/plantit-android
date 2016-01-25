@@ -3,14 +3,15 @@ package net.henorek.plantit.ui.views.fragments;
 import android.os.Bundle;
 
 import net.henorek.plantit.R;
-import net.henorek.plantit.ui.base.BaseFragment;
+import net.henorek.plantit.ui.base.fragments.BaseFragment;
+import net.henorek.plantit.ui.interfaces.ILoginView;
 import net.henorek.plantit.ui.presenters.LoginViewPresenter;
 
-public class LoginViewFragment extends BaseFragment {
+public class LoginViewFragment extends BaseFragment<ILoginView, LoginViewPresenter> implements ILoginView {
 
     @Override
-    public LoginViewPresenter createPresenter() {
-        return new LoginViewPresenter();
+    protected int getResourceId() {
+        return R.layout.fragment_login_view;
     }
 
     @Override
@@ -19,8 +20,7 @@ public class LoginViewFragment extends BaseFragment {
     }
 
     @Override
-    protected int getResourceId() {
-        return R.layout.fragment_login_view;
+    public LoginViewPresenter createPresenter() {
+        return new LoginViewPresenter();
     }
-
 }

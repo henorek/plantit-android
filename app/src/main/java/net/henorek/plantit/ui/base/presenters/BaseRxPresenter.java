@@ -1,4 +1,4 @@
-package net.henorek.plantit.ui.base;
+package net.henorek.plantit.ui.base.presenters;
 
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 import com.hannesdorfmann.mosby.mvp.MvpPresenter;

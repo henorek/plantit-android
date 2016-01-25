@@ -57,40 +57,24 @@
         android:padding="@dimen/plantit_activity_margin">
 
         <Button
-            android:id="@+id/menuTest02"
+            android:id="@+id/menuStart"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="160dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/shape_button_content_rounded_corners"
-            android:text="Test02"
+            android:text="START"
             android:textColor="@color/plantit_white" />
 
         <Button
-            android:id="@+id/menuTest03"
+            android:id="@+id/menuHistory"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="160dp"
             android:layout_centerInParent="true"
             android:layout_marginBottom="20dp"
             android:background="@drawable/shape_button_content_rounded_corners"
-            android:text="Test03"
+            android:text="HISTORY"
             android:textColor="@color/plantit_white" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/shape_button_content_rounded_corners"
-            android:text="Test04"
-            android:textColor="@color/plantit_white" />
-
-        <Button
-            android:id="@+id/menuTest01"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/shape_button_content_rounded_corners"
-            android:text="Test01"
-            android:textColor="@color/plantit_white" />
 
     </LinearLayout>
 

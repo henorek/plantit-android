@@ -8,12 +8,19 @@
         android:label="@string/app_name"
         android:theme="@style/ApplicationTheme">
         <activity
-            android:name=".ui.views.MainScreenActivityMainScreenView"
+            android:name=".ui.views.activities.MainScreenActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.views.activities.MatchmakingActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MATCHMAKING" />
             </intent-filter>
         </activity>
     </application>

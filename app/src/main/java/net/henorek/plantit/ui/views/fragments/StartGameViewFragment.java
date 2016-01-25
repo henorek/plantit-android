@@ -1,19 +1,33 @@
 package net.henorek.plantit.ui.views.fragments;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import net.henorek.plantit.R;
+import net.henorek.plantit.commons.Navigator;
+import net.henorek.plantit.ui.base.fragments.BaseFragment;
+import net.henorek.plantit.ui.interfaces.IStartGameView;
+import net.henorek.plantit.ui.presenters.StartGamePresenter;
 
-public class StartGameViewFragment extends Fragment {
+import butterknife.OnClick;
 
-    @Nullable
+public class StartGameViewFragment extends BaseFragment<IStartGameView, StartGamePresenter> implements IStartGameView {
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_start_game_view, container, false);
+    protected int getResourceId() {
+        return R.layout.fragment_start_game_view;
+    }
+
+    @Override
+    protected void prepareView(Bundle savedInstanceState) {
+    }
+
+    @Override
+    public StartGamePresenter createPresenter() {
+        return new StartGamePresenter();
+    }
+
+    @OnClick((R.id.menuStart))
+    public void goToStart() {
+        Navigator.navigateToMatchmakingActivity(getContext());
     }
 }
