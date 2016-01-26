@@ -3,7 +3,7 @@ package net.henorek.plantit.data.models;
 import lombok.Data;
 
 @Data
-public class GameLevel {
+public class GameLevelApi {
 
     private long id;
 

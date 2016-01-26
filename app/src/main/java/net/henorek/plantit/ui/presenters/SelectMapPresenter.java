@@ -1,6 +1,6 @@
 package net.henorek.plantit.ui.presenters;
 
-import net.henorek.plantit.data.models.GameLevel;
+import net.henorek.plantit.data.models.GameLevelApi;
 import net.henorek.plantit.data.services.GameLevelsService;
 import net.henorek.plantit.ui.base.presenters.BaseRxPresenter;
 import net.henorek.plantit.ui.interfaces.ISelectMapView;
@@ -12,7 +12,7 @@ import javax.inject.Inject;
 
 import rx.Observable;
 
-public class SelectMapPresenter extends BaseRxPresenter<ISelectMapView, List<GameLevel>> {
+public class SelectMapPresenter extends BaseRxPresenter<ISelectMapView, List<GameLevelApi>> {
 
     GameLevelsService gameLevelsService;
 
@@ -22,11 +22,11 @@ public class SelectMapPresenter extends BaseRxPresenter<ISelectMapView, List<Gam
     }
 
     public void loadGameLevels(boolean pullToRefresh) {
-        Observable<List<GameLevel>> observable =
+        Observable<List<GameLevelApi>> observable =
                 gameLevelsService.getGameLevels()
-                        .flatMap(repos -> {
-                            Collections.shuffle(repos);
-                            return Observable.just(repos);
+                        .flatMap(gameLevels -> {
+                            Collections.shuffle(gameLevels);
+                            return Observable.just(gameLevels);
                         });
         subscribe(observable, pullToRefresh);
     }

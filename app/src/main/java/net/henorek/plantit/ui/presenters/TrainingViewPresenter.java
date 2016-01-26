@@ -1,6 +1,6 @@
 package net.henorek.plantit.ui.presenters;
 
-import net.henorek.plantit.data.models.TacticsEntity;
+import net.henorek.plantit.data.models.TacticsEntityApi;
 import net.henorek.plantit.data.services.TacticsService;
 import net.henorek.plantit.ui.base.presenters.BaseRxPresenter;
 import net.henorek.plantit.ui.interfaces.ITrainingView;
@@ -12,7 +12,7 @@ import javax.inject.Inject;
 
 import rx.Observable;
 
-public class TrainingViewPresenter extends BaseRxPresenter<ITrainingView, List<TacticsEntity>> {
+public class TrainingViewPresenter extends BaseRxPresenter<ITrainingView, List<TacticsEntityApi>> {
 
     TacticsService tacticsService;
 
@@ -22,7 +22,7 @@ public class TrainingViewPresenter extends BaseRxPresenter<ITrainingView, List<T
     }
 
     public void loadTactics(boolean pullToRefresh) {
-        Observable<List<TacticsEntity>> observable =
+        Observable<List<TacticsEntityApi>> observable =
                 tacticsService.getTactics()
                         .flatMap(repos -> {
                             Collections.shuffle(repos);

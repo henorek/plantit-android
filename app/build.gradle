@@ -98,6 +98,7 @@ dependencies {
     compile 'com.hannesdorfmann.annotatedadapter:annotation:1.1.1'
     compile 'com.hannesdorfmann.annotatedadapter:support-recyclerview:1.1.1'
     apt 'com.hannesdorfmann.annotatedadapter:processor:1.1.1'
+    compile 'com.squareup.sqlbrite:sqlbrite:0.5.0'
 
     testCompile testDpn.junit
     testCompile testDpn.mockito

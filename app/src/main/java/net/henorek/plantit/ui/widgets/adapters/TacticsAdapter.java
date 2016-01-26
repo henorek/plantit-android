@@ -10,7 +10,7 @@ import com.hannesdorfmann.annotatedadapter.support.recyclerview.SupportAnnotated
 import com.squareup.picasso.Picasso;
 
 import net.henorek.plantit.R;
-import net.henorek.plantit.data.models.TacticsEntity;
+import net.henorek.plantit.data.models.TacticsEntityApi;
 
 import java.util.List;
 
@@ -33,7 +33,7 @@ public class TacticsAdapter extends SupportAnnotatedAdapter implements TacticsAd
 
     @Getter
     @Setter
-    List<TacticsEntity> tactics;
+    List<TacticsEntityApi> tactics;
 
     Picasso picasso;
 
@@ -50,7 +50,7 @@ public class TacticsAdapter extends SupportAnnotatedAdapter implements TacticsAd
 
     @Override
     public void bindViewHolder(TacticsAdapterHolders.TacticViewHolder vh, int position) {
-        TacticsEntity tactic = tactics.get(position);
+        TacticsEntityApi tactic = tactics.get(position);
 
         vh.name.setText(tactic.getTitle());
         vh.description.setText(tactic.getAuthor());

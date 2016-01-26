@@ -15,7 +15,7 @@ import com.hannesdorfmann.mosby.mvp.viewstate.lce.MvpLceViewStateFragment;
 import com.hannesdorfmann.mosby.mvp.viewstate.lce.data.RetainingLceViewState;
 
 import net.henorek.plantit.R;
-import net.henorek.plantit.data.models.GameLevel;
+import net.henorek.plantit.data.models.GameLevelApi;
 import net.henorek.plantit.di.components.DaggerGameLevelsComponent;
 import net.henorek.plantit.di.components.GameLevelsComponent;
 import net.henorek.plantit.di.modules.GameLevelsModule;
@@ -31,7 +31,7 @@ import javax.inject.Inject;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class SelectMapViewFragment extends MvpLceViewStateFragment<SwipeRefreshLayout, List<GameLevel>, ISelectMapView, SelectMapPresenter>
+public class SelectMapViewFragment extends MvpLceViewStateFragment<SwipeRefreshLayout, List<GameLevelApi>, ISelectMapView, SelectMapPresenter>
         implements ISelectMapView, SwipeRefreshLayout.OnRefreshListener {
 
     @Bind(R.id.fsmv_select_map_view)
@@ -77,18 +77,18 @@ public class SelectMapViewFragment extends MvpLceViewStateFragment<SwipeRefreshL
 
     @NonNull
     @Override
-    public LceViewState<List<GameLevel>, ISelectMapView> createViewState() {
+    public LceViewState<List<GameLevelApi>, ISelectMapView> createViewState() {
         return new RetainingLceViewState<>();
     }
 
     @Override
-    public List<GameLevel> getData() {
-        return adapter.getGameLevels();
+    public List<GameLevelApi> getData() {
+        return adapter.getGameLevelApis();
     }
 
     @Override
-    public void setData(List<GameLevel> data) {
-        adapter.setGameLevels(data);
+    public void setData(List<GameLevelApi> data) {
+        adapter.setGameLevelApis(data);
         adapter.notifyDataSetChanged();
     }
 

@@ -1,7 +1,7 @@
 package net.henorek.plantit.data.services;
 
 
-import net.henorek.plantit.data.models.TacticsEntity;
+import net.henorek.plantit.data.models.TacticsEntityApi;
 
 import java.util.List;
 
@@ -13,5 +13,5 @@ public interface TacticsService {
     String TACTICS_REPOSITORY_ENDPOINT = "https://api.myjson.com/bins/";
 
     @GET("4wyn7")
-    Observable<List<TacticsEntity>> getTactics();
+    Observable<List<TacticsEntityApi>> getTactics();
 }

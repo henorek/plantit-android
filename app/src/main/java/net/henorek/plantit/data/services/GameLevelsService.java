@@ -1,6 +1,6 @@
 package net.henorek.plantit.data.services;
 
-import net.henorek.plantit.data.models.GameLevel;
+import net.henorek.plantit.data.models.GameLevelApi;
 
 import java.util.List;
 
@@ -12,5 +12,5 @@ public interface GameLevelsService {
     String GAME_LEVELS_REPOSITORY_ENDPOINT = "https://api.myjson.com/bins/";
 
     @GET("4bnwf")
-    Observable<List<GameLevel>> getGameLevels();
+    Observable<List<GameLevelApi>> getGameLevels();
 }

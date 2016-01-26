@@ -10,7 +10,7 @@ import com.hannesdorfmann.annotatedadapter.support.recyclerview.SupportAnnotated
 import com.squareup.picasso.Picasso;
 
 import net.henorek.plantit.R;
-import net.henorek.plantit.data.models.GameLevel;
+import net.henorek.plantit.data.models.GameLevelApi;
 
 import java.util.List;
 
@@ -33,7 +33,7 @@ public class GameLevelsAdapter extends SupportAnnotatedAdapter implements GameLe
 
     @Getter
     @Setter
-    List<GameLevel> gameLevels;
+    List<GameLevelApi> gameLevelApis;
 
     Picasso picasso;
 
@@ -45,21 +45,21 @@ public class GameLevelsAdapter extends SupportAnnotatedAdapter implements GameLe
 
     @Override
     public int getItemCount() {
-        return gameLevels == null ? 0 : gameLevels.size();
+        return gameLevelApis == null ? 0 : gameLevelApis.size();
     }
 
     @Override
     public void bindViewHolder(GameLevelsAdapterHolders.GameLevelViewHolder vh, int position) {
-        GameLevel gameLevel = gameLevels.get(position);
+        GameLevelApi gameLevelApi = gameLevelApis.get(position);
 
-        vh.name.setText(gameLevel.getName());
+        vh.name.setText(gameLevelApi.getName());
 
-        picasso.load(gameLevel.getIconUrl())
+        picasso.load(gameLevelApi.getIconUrl())
                 .placeholder(R.color.plantit_dark_gray)
                 .error(R.color.plantit_black)
                 .into(vh.icon);
 
-        picasso.load(gameLevel.getBackgroundUrl())
+        picasso.load(gameLevelApi.getBackgroundUrl())
                 .placeholder(R.color.plantit_dark_gray)
                 .error(R.color.plantit_black)
                 .into(vh.background);

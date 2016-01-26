@@ -15,7 +15,7 @@ import com.hannesdorfmann.mosby.mvp.viewstate.lce.MvpLceViewStateFragment;
 import com.hannesdorfmann.mosby.mvp.viewstate.lce.data.RetainingLceViewState;
 
 import net.henorek.plantit.R;
-import net.henorek.plantit.data.models.TacticsEntity;
+import net.henorek.plantit.data.models.TacticsEntityApi;
 import net.henorek.plantit.di.components.DaggerTacticsComponent;
 import net.henorek.plantit.di.components.TacticsComponent;
 import net.henorek.plantit.di.modules.TacticsModule;
@@ -31,7 +31,7 @@ import javax.inject.Inject;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class TrainingViewFragment extends MvpLceViewStateFragment<SwipeRefreshLayout, List<TacticsEntity>, ITrainingView, TrainingViewPresenter>
+public class TrainingViewFragment extends MvpLceViewStateFragment<SwipeRefreshLayout, List<TacticsEntityApi>, ITrainingView, TrainingViewPresenter>
         implements ITrainingView, SwipeRefreshLayout.OnRefreshListener {
 
     @Bind(R.id.recyclerView)
@@ -77,17 +77,17 @@ public class TrainingViewFragment extends MvpLceViewStateFragment<SwipeRefreshLa
 
     @NonNull
     @Override
-    public LceViewState<List<TacticsEntity>, ITrainingView> createViewState() {
+    public LceViewState<List<TacticsEntityApi>, ITrainingView> createViewState() {
         return new RetainingLceViewState<>();
     }
 
     @Override
-    public List<TacticsEntity> getData() {
+    public List<TacticsEntityApi> getData() {
         return adapter.getTactics();
     }
 
     @Override
-    public void setData(List<TacticsEntity> data) {
+    public void setData(List<TacticsEntityApi> data) {
         adapter.setTactics(data);
         adapter.notifyDataSetChanged();
     }
