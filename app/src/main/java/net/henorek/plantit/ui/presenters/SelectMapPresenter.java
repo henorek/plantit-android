@@ -30,5 +30,15 @@ public class SelectMapPresenter extends BaseRxPresenter<ISelectMapView, List<Gam
                         });
         subscribe(observable, pullToRefresh);
     }
+//
+//    private void cacheGameLevels() throws SQLException, AudiotekaException {
+//        promotedCollections = BLLFactory.getInstance().getStaticService().getPromotedCollections();
+//        if (promotedCollections != null) {
+//            for(PromotedCollection collection : promotedCollections){
+//                collection.setUpdateTime(new Date());
+//                _dbHelper.getPromotedCollectionDao().createOrUpdate(collection);
+//            }
+//        }
+//    }
 
 }
