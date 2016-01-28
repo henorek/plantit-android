@@ -1,21 +1,20 @@
-package net.henorek.plantit.ui.base.activities;
+package net.henorek.plantit.ui.base;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.View;
 
 import com.hannesdorfmann.mosby.mvp.MvpActivity;
-import com.hannesdorfmann.mosby.mvp.delegate.ActivityMvpDelegateCallback;
+import com.hannesdorfmann.mosby.mvp.MvpPresenter;
+import com.hannesdorfmann.mosby.mvp.MvpView;
+import com.hannesdorfmann.mosby.mvp.delegate.ActivityMvpDelegate;
 
-import net.henorek.plantit.ui.base.presenters.BasePresenter;
-import net.henorek.plantit.ui.base.views.IBaseView;
 import net.henorek.plantit.ui.utils.ActivityConfig;
 
 import butterknife.ButterKnife;
 import timber.log.Timber;
 
-public abstract class BaseActivity<VIEW extends IBaseView, PRESENTER extends BasePresenter<VIEW>>
-        extends MvpActivity<VIEW, PRESENTER>
-        implements ActivityMvpDelegateCallback<VIEW, PRESENTER>, IBaseView {
+public abstract class BaseMvpActivity extends MvpActivity<BaseMvpView, BaseMvpPresenter> implements BaseMvpView {
 
     private ActivityConfig activityConfig;
 
@@ -38,7 +37,7 @@ public abstract class BaseActivity<VIEW extends IBaseView, PRESENTER extends Bas
 
     protected abstract void addFragments();
 
-    private void setContentView() {
+    private void setContentView(){
         View root = View.inflate(this, activityConfig.layoutId, null);
         setContentView(root);
     }
@@ -46,10 +45,11 @@ public abstract class BaseActivity<VIEW extends IBaseView, PRESENTER extends Bas
     private void initLibraries() {
         ButterKnife.bind(this);
         Timber.plant(new Timber.DebugTree());
+
     }
 
     @Override
-    public BaseActivity getInstance() {
+    public BaseMvpActivity getCurrentContext() {
         return this;
     }
 }
