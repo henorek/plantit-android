@@ -10,7 +10,7 @@ import com.hannesdorfmann.annotatedadapter.support.recyclerview.SupportAnnotated
 import com.squareup.picasso.Picasso;
 
 import net.henorek.plantit.R;
-import net.henorek.plantit.data.models.TacticsEntityApi;
+import net.henorek.plantit.data.net.TacticsEntityApi;
 
 import java.util.List;
 

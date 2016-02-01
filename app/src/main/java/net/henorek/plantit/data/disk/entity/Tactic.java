@@ -1,19 +1,20 @@
-package net.henorek.plantit.cache.models;
+package net.henorek.plantit.data.disk.entity;
 
 import android.provider.BaseColumns;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-import net.henorek.plantit.cache.DBConstants;
+
+import net.henorek.plantit.commons.Constants;
 
 import java.util.Date;
 
 import lombok.Data;
 
 @Data
-@DatabaseTable(tableName = DBConstants.TACTICS_TABLE)
-public class TacticsEntityDb {
+@DatabaseTable(tableName = Constants.Database.DATABASE_NAME)
+public class Tactic {
 
     @DatabaseField(id = true, columnName = BaseColumns._ID)
     private long id;

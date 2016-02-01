@@ -1,6 +1,6 @@
-package net.henorek.plantit.data.services;
+package net.henorek.plantit.data.net.services;
 
-import net.henorek.plantit.data.models.GameLevelApi;
+import net.henorek.plantit.data.net.GameLevelApi;
 
 import java.util.List;
 

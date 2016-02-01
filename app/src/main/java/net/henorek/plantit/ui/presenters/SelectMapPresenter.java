@@ -1,7 +1,7 @@
 package net.henorek.plantit.ui.presenters;
 
-import net.henorek.plantit.data.models.GameLevelApi;
-import net.henorek.plantit.data.services.GameLevelsService;
+import net.henorek.plantit.data.net.GameLevelApi;
+import net.henorek.plantit.data.net.services.GameLevelsService;
 import net.henorek.plantit.ui.base.presenters.BaseRxPresenter;
 import net.henorek.plantit.ui.interfaces.ISelectMapView;
 

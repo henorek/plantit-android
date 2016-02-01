@@ -2,7 +2,7 @@ package net.henorek.plantit.ui.interfaces;
 
 import com.hannesdorfmann.mosby.mvp.lce.MvpLceView;
 
-import net.henorek.plantit.data.models.TacticsEntityApi;
+import net.henorek.plantit.data.net.TacticsEntityApi;
 
 import java.util.List;
 

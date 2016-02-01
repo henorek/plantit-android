@@ -1,7 +1,7 @@
-package net.henorek.plantit.data.services;
+package net.henorek.plantit.data.net.api;
 
 
-import net.henorek.plantit.data.models.TacticsEntityApi;
+import net.henorek.plantit.data.net.TacticsEntityApi;
 
 import java.util.List;
 

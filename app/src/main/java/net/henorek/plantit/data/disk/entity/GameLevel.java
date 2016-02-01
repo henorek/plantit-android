@@ -1,11 +1,11 @@
-package net.henorek.plantit.cache.models;
+package net.henorek.plantit.data.disk.entity;
 
 import android.provider.BaseColumns;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-import net.henorek.plantit.cache.DBConstants;
+import net.henorek.plantit.data.cache.DBConstants;
 
 import java.util.Date;
 
@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Data
 @DatabaseTable(tableName = DBConstants.GAME_LEVEL_TABLE)
-public class GameLevelDb {
+public class GameLevel {
 
     @DatabaseField(id = true, columnName = BaseColumns._ID)
     private int id;

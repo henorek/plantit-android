@@ -1,4 +1,4 @@
-package net.henorek.plantit.data.models;
+package net.henorek.plantit.data.net;
 
 import lombok.Data;
 

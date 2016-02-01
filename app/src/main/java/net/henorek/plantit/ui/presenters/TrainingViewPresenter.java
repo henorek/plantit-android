@@ -1,7 +1,7 @@
 package net.henorek.plantit.ui.presenters;
 
-import net.henorek.plantit.data.models.TacticsEntityApi;
-import net.henorek.plantit.data.services.TacticsService;
+import net.henorek.plantit.data.net.TacticsEntityApi;
+import net.henorek.plantit.data.net.TacticsService;
 import net.henorek.plantit.ui.base.presenters.BaseRxPresenter;
 import net.henorek.plantit.ui.interfaces.ITrainingView;
 
