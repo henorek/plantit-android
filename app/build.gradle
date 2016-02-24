@@ -13,7 +13,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "net.henorek.plantit"
+        applicationId "com.henorek.plantit"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
@@ -99,6 +99,7 @@ dependencies {
     compile 'com.hannesdorfmann.annotatedadapter:support-recyclerview:1.1.1'
     apt 'com.hannesdorfmann.annotatedadapter:processor:1.1.1'
     compile 'com.squareup.sqlbrite:sqlbrite:0.5.0'
+    compile 'com.github.pwittchen:reactivenetwork:0.2.0'
 
     testCompile testDpn.junit
     testCompile testDpn.mockito
