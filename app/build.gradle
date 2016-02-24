@@ -78,6 +78,7 @@ dependencies {
         transitive = true;
     }
     compile 'org.jsoup:jsoup:1.7.3'
+
     compile 'com.google.code.gson:gson:2.5'
     compile 'com.goebl:david-webb:1.1.0'
     compile 'com.facebook.android:facebook-android-sdk:4.6.0'
@@ -100,6 +101,7 @@ dependencies {
     apt 'com.hannesdorfmann.annotatedadapter:processor:1.1.1'
     compile 'com.squareup.sqlbrite:sqlbrite:0.5.0'
     compile 'com.github.pwittchen:reactivenetwork:0.2.0'
+    compile 'org.jetbrains.kotlin:kotlin-stdlib:1.0.0'
 
     testCompile testDpn.junit
     testCompile testDpn.mockito

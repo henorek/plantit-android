@@ -3,8 +3,10 @@ package com.henorek.plantit.data.net.api;
 import android.support.annotation.NonNull;
 
 import com.henorek.plantit.data.disk.entity.Tactic;
+import com.henorek.plantit.data.net.TacticsEntityApi;
 import com.henorek.plantit.data.net.helper.TransformHelper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import rx.Observable;
@@ -18,17 +20,18 @@ public class TacticApiDataSource implements ITacticsApiDataSource {
     }
 
     @Override
-    public Observable<List<Tactic>> getTactics(String title) {
+    public Observable<List<Tactic>> getTactics() {
         return primaryApiService.getTactics()
 //                .map(TransformHelper::apiArrayToModelArrayList);
-                .map(chapters -> fillProductId(title, chapters));
+                .map(chapters -> fillProductId("dupa", chapters));
     }
 
     @NonNull
-    private List<Tactic> fillProductId(String title, List<Tactic> chapters) {
+    private List<Tactic> fillProductId(String title, List<TacticsEntityApi> chapters) {
         //for (Chapter chapter : chapters)
         //    chapter.setProductId(productId);
-        return chapters;
+//        return chapters;
+    return new ArrayList<>();
     }
 
 }

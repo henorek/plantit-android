@@ -20,7 +20,7 @@ public class DiskDataStore implements IDiskDataStore {
   }
 
   @Override
-  public Observable<List<Tactic>> getTactics(String title) {
+  public Observable<List<Tactic>> getTactics() {
     return Observable.just(get());
   }
 

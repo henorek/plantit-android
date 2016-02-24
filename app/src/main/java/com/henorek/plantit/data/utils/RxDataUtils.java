@@ -1,4 +1,4 @@
-package com.henorek.plantit.data;
+package com.henorek.plantit.data.utils;
 
 import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
 
@@ -29,15 +29,20 @@ public class RxDataUtils {
                     });
     }
 
-    public boolean isConnectionAvaible(ConnectivityStatus connectivityStatus) {
-//        switch (connectivityStatus) {
-//            case UNKNOWN:
-//            case WIFI_CONNECTED:
-//            case WIFI_CONNECTED_HAS_INTERNET:
-//            case WIFI_CONNECTED_HAS_NO_INTERNET:
-//            case MOBILE_CONNECTED:
-//            c
-        return true;
+    public static boolean isConnected(ConnectivityStatus connectivityStatus) {
+        boolean decision = false;
+        switch (connectivityStatus) {
+            case UNKNOWN:
+            case WIFI_CONNECTED_HAS_NO_INTERNET:
+            case OFFLINE:
+                decision = false;
+                break;
+            case WIFI_CONNECTED:
+            case WIFI_CONNECTED_HAS_INTERNET:
+            case MOBILE_CONNECTED:
+                decision = true;
+                break;
+        }
+        return decision;
     }
-
 }

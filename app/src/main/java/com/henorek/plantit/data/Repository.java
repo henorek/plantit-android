@@ -8,6 +8,7 @@ import com.github.pwittchen.reactivenetwork.library.ReactiveNetwork;
 import com.henorek.plantit.data.disk.entity.Tactic;
 import com.henorek.plantit.data.enums.SourceType;
 import com.henorek.plantit.data.net.api.ITacticsApiDataSource;
+import com.henorek.plantit.data.utils.RxDataUtils;
 import com.henorek.plantit.di.scope.ApplicationScope;
 import com.henorek.plantit.utils.RxUtils;
 
@@ -48,7 +49,7 @@ public class Repository implements IRepository {
         Subscription connectivityStatusSubscription = new ReactiveNetwork().observeConnectivity(context)
                 .compose(RxUtils.applySchedulers())
                 .subscribe(connectivityStatus -> {
-                    if (ConnectivityStatus.OFFLINE != connectivityStatus) System.out.println("dupa");
+                    if (RxDataUtils.isConnected(connectivityStatus)) System.out.println("dupa");
                 });
 
         return forceRefresh ? apiObservable : Observable.concat(diskObservable, apiObservable)
