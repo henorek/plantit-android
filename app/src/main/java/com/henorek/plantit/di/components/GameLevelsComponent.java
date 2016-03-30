@@ -4,18 +4,14 @@ import com.henorek.plantit.di.modules.GameLevelsModule;
 import com.henorek.plantit.ui.presenters.SelectMapPresenter;
 import com.henorek.plantit.ui.views.fragments.SelectMapViewFragment;
 import com.henorek.plantit.ui.widgets.adapters.GameLevelsAdapter;
-
+import dagger.Component;
 import javax.inject.Singleton;
 
-import dagger.Component;
+@Singleton @Component(modules = GameLevelsModule.class) public interface GameLevelsComponent {
 
-@Singleton
-@Component(modules = GameLevelsModule.class)
-public interface GameLevelsComponent {
+  void inject(SelectMapViewFragment fragment);
 
-    void inject(SelectMapViewFragment fragment);
+  SelectMapPresenter presenter();
 
-    SelectMapPresenter presenter();
-
-    GameLevelsAdapter adapter();
+  GameLevelsAdapter adapter();
 }

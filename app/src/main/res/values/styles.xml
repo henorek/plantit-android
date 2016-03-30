@@ -1,14 +1,14 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="ApplicationTheme" parent="@style/Theme.AppCompat.NoActionBar">
-        <item name="android:background">@color/plantit_dark_gray</item>
+  <!-- Base application theme. -->
+  <style name="ApplicationTheme" parent="@style/Theme.AppCompat.NoActionBar">
+    <item name="android:background">@color/plantit_dark_gray</item>
 
-        //Fullscreen
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowContentOverlay">@null</item>
-    </style>
+    //Fullscreen
+    <item name="windowNoTitle">true</item>
+    <item name="windowActionBar">false</item>
+    <item name="android:windowFullscreen">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+  </style>
 
 </resources>

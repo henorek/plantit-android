@@ -2,57 +2,63 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/plantit_bg">
+    android:background="@color/plantit_bg"
+    >
 
-    <include layout="@layout/loading_view" />
+  <include layout="@layout/loading_view"/>
 
-    <include layout="@layout/error_view" />
+  <include layout="@layout/error_view"/>
 
-    <TextView
-        android:id="@+id/fsgv_title_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="12dp"
-        android:layout_marginTop="@dimen/plantit_activity_margin"
-        android:background="@color/plantit_bg"
-        android:text="TRAINING"
-        android:textColor="@color/plantit_white"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+  <TextView
+      android:id="@+id/fsgv_title_text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_marginBottom="12dp"
+      android:layout_marginTop="@dimen/plantit_activity_margin"
+      android:background="@color/plantit_bg"
+      android:text="TRAINING"
+      android:textColor="@color/plantit_white"
+      android:textSize="20sp"
+      android:textStyle="bold"
+      />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="8dp"
-        android:layout_below="@id/fsgv_title_text"
-        android:layout_marginTop="11dp"
-        android:background="@color/plantit_green" />
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="8dp"
+      android:layout_below="@id/fsgv_title_text"
+      android:layout_marginTop="11dp"
+      android:background="@color/plantit_green"
+      />
 
-    <View
-        android:id="@+id/fsgv_checkpoint"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_below="@id/fsgv_title_text"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/plantit_activity_margin"
-        android:background="@drawable/shape_checkpoint_left" />
+  <View
+      android:id="@+id/fsgv_checkpoint"
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      android:layout_below="@id/fsgv_title_text"
+      android:layout_centerHorizontal="true"
+      android:layout_marginBottom="@dimen/plantit_activity_margin"
+      android:background="@drawable/shape_checkpoint_left"
+      />
 
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/contentView"
+  <android.support.v4.widget.SwipeRefreshLayout
+      android:id="@+id/contentView"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_below="@id/fsgv_checkpoint"
+      android:background="@color/plantit_bg"
+      android:enabled="false"
+      android:paddingLeft="@dimen/plantit_activity_margin"
+      android:paddingRight="@dimen/plantit_activity_margin"
+      >
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/fsgv_checkpoint"
         android:background="@color/plantit_bg"
-        android:enabled="false"
-        android:paddingLeft="@dimen/plantit_activity_margin"
-        android:paddingRight="@dimen/plantit_activity_margin">
+        />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/plantit_bg" />
-
-    </android.support.v4.widget.SwipeRefreshLayout>
+  </android.support.v4.widget.SwipeRefreshLayout>
 </RelativeLayout>

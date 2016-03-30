@@ -3,35 +3,40 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:background="@drawable/shape_button_googleplus_rounded_corners">
+    android:background="@drawable/shape_button_googleplus_rounded_corners"
+    >
 
-    <net.henorek.plantit.ui.widgets.controls.SquareLayout
+  <com.henorek.plantit.ui.widgets.controls.SquareLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      >
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/googleplus_unfocused"
+        />
+
+    <ImageView
+        android:id="@+id/icon"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/facebook_unfocused"
+        />
 
-        <ImageView
-            android:id="@+id/background"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/googleplus_unfocused" />
-
-        <ImageView
-            android:id="@+id/icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:background="@color/facebook_unfocused" />
-
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@color/plantit_black"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:textColor="@android:color/white"
-            android:textSize="14sp" />
-    </net.henorek.plantit.ui.widgets.controls.SquareLayout>
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/plantit_black"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        />
+  </com.henorek.plantit.ui.widgets.controls.SquareLayout>
 
 </RelativeLayout>

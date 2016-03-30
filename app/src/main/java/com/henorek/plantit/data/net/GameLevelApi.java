@@ -2,16 +2,15 @@ package com.henorek.plantit.data.net;
 
 import lombok.Data;
 
-@Data
-public class GameLevelApi {
+@Data public class GameLevelApi {
 
-    private long id;
+  private long id;
 
-    private String iconUrl;
+  private String iconUrl;
 
-    private String name;
+  private String name;
 
-    private String radarUrl;
+  private String radarUrl;
 
-    private String backgroundUrl;
+  private String backgroundUrl;
 }

@@ -1,7 +1,7 @@
 <resources>
-    //Application Name
-    <string name="app_name">plant It!</string>
+  //Application Name
+  <string name="app_name">plant It!</string>
 
-    //Logo formatted using HTML
-    <string name="logo"><![CDATA[<font color=\'#f2f2f2\'>plan</font><font color=\'#8ab839\'>t</font><font color=\'#f2f2f2\'>It</font><font color=\'#8ab839\'>!</font>]]></string>
+  //Logo formatted using HTML
+  <string name="logo"><![CDATA[<font color=\'#f2f2f2\'>plan</font><font color=\'#8ab839\'>t</font><font color=\'#f2f2f2\'>It</font><font color=\'#8ab839\'>!</font>]]></string>
 </resources>

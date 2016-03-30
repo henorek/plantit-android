@@ -3,108 +3,109 @@ apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'me.tatarka.retrolambda'
 
 repositories {
-    flatDir {
-        dirs 'libs'
-    }
+  flatDir {
+    dirs 'libs'
+  }
 }
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+  compileSdkVersion 23
+  buildToolsVersion "23.0.1"
 
-    defaultConfig {
-        applicationId "com.henorek.plantit"
-        minSdkVersion 15
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
-        multiDexEnabled true
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  defaultConfig {
+    applicationId "com.henorek.plantit"
+    minSdkVersion 15
+    targetSdkVersion 23
+    versionCode 1
+    versionName "1.0"
+    multiDexEnabled true
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+  }
 
-    compileOptions {
-        // Retrolambda
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+  compileOptions {
+    // Retrolambda
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
 }
 
 dependencies {
-    def dpn = rootProject.ext.dependencies
-    def testDpn = rootProject.ext.testDependencies
+  def dpn = rootProject.ext.dependencies
+  def testDpn = rootProject.ext.testDependencies
 
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    apt dpn.dagger2Compiler
-    provided dpn.javaxAnnotation
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  compile 'com.android.support:appcompat-v7:23.1.1'
+  apt dpn.dagger2Compiler
+  provided dpn.javaxAnnotation
 
-    apt dpn.lombok
-    provided dpn.lombok
+  apt dpn.lombok
+  provided dpn.lombok
 
-    compile dpn.androidTransformer
-    provided dpn.androidTransformerCompiler
+  compile dpn.androidTransformer
+  provided dpn.androidTransformerCompiler
 
-    compile dpn.dagger2
-    compile dpn.rxJava
-    compile dpn.rxAndroid
+  compile dpn.dagger2
+  compile dpn.rxJava
+  compile dpn.rxAndroid
 
-    compile dpn.retrofit
-    compile dpn.retrofitRxJava
-    compile dpn.retrofitGson
+  compile dpn.retrofit
+  compile dpn.retrofitRxJava
+  compile dpn.retrofitGson
 
-    compile dpn.ormliteCore
-    compile dpn.ormliteAndroid
+  compile dpn.ormliteCore
+  compile dpn.ormliteAndroid
 
-    compile dpn.playServicesBase
-    compile dpn.playServicesAppIndexing
-    compile dpn.playServicesAppAds
+  compile dpn.playServicesBase
+  compile dpn.playServicesAppIndexing
+  compile dpn.playServicesAppAds
 
-    compile dpn.otto
-    compile dpn.butterknife
-    compile dpn.picasso
-    compile dpn.okhttpUrlConnection // Needed by Picasso
-    compile dpn.okhttpLogInterceptor
-    compile(dpn.okhttp) {
-        exclude module: 'okhttp' // Already in Retrofit2
-    }
+  compile dpn.otto
+  compile dpn.butterknife
+  compile dpn.picasso
+  compile dpn.okhttpUrlConnection // Needed by Picasso
+  compile dpn.okhttpLogInterceptor
+  compile(dpn.okhttp) {
+    exclude module: 'okhttp' // Already in Retrofit2
+  }
 
-    compile('com.crashlytics.sdk.android:crashlytics:2.4.0@aar') {
-        transitive = true;
-    }
-    compile 'org.jsoup:jsoup:1.7.3'
+  compile('com.crashlytics.sdk.android:crashlytics:2.4.0@aar') {
+    transitive = true;
+  }
+  compile 'org.jsoup:jsoup:1.7.3'
 
-    compile 'com.google.code.gson:gson:2.5'
-    compile 'com.facebook.android:facebook-android-sdk:4.6.0'
-    // UI
-    compile 'me.leolin:ShortcutBadger:1.1.3@aar'
-    compile 'com.github.chrisbanes.actionbarpulltorefresh:library:0.9.9'
-    compile 'com.sothree.slidinguppanel:library:3.0.0'
-    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
-    compile 'com.melnykov:floatingactionbutton:1.3.0'
-    compile 'me.relex:circleindicator:1.1.8@aar'
-    compile('cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2') {
-        exclude module: 'support-v4'
-    }
-    compile 'com.hannesdorfmann.mosby:mvp:2.0.0'
-    compile 'com.hannesdorfmann.mosby:viewstate:2.0.0'
-    compile 'com.jakewharton.timber:timber:3.1.0'
+  compile 'com.google.code.gson:gson:2.5'
+  compile 'com.facebook.android:facebook-android-sdk:4.6.0'
+  // UI
+  compile 'me.leolin:ShortcutBadger:1.1.3@aar'
+  compile 'com.github.chrisbanes.actionbarpulltorefresh:library:0.9.9'
+  compile 'com.sothree.slidinguppanel:library:3.0.0'
+  compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+  compile 'com.melnykov:floatingactionbutton:1.3.0'
+  compile 'me.relex:circleindicator:1.1.8@aar'
+  compile('cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2') {
+    exclude module: 'support-v4'
+  }
+  compile 'com.hannesdorfmann.mosby:mvp:2.0.0'
+  compile 'com.hannesdorfmann.mosby:viewstate:2.0.0'
+  compile 'com.jakewharton.timber:timber:3.1.0'
 
-    compile 'com.hannesdorfmann.annotatedadapter:annotation:1.1.1'
-    compile 'com.hannesdorfmann.annotatedadapter:support-recyclerview:1.1.1'
-    apt 'com.hannesdorfmann.annotatedadapter:processor:1.1.1'
-    compile 'com.squareup.sqlbrite:sqlbrite:0.5.0'
-    compile 'com.github.pwittchen:reactivenetwork:0.2.0'
-    compile 'org.jetbrains.kotlin:kotlin-stdlib:1.0.0'
+  compile 'com.hannesdorfmann.annotatedadapter:annotation:1.1.1'
+  compile 'com.hannesdorfmann.annotatedadapter:support-recyclerview:1.1.1'
+  apt 'com.hannesdorfmann.annotatedadapter:processor:1.1.1'
+  compile 'com.squareup.sqlbrite:sqlbrite:0.5.0'
+  compile 'com.github.pwittchen:reactivenetwork:0.2.0'
+  compile 'org.jetbrains.kotlin:kotlin-stdlib:1.0.0'
+  compile 'com.squareup.flow:flow:1.0.0-alpha'
 
-    testCompile testDpn.junit
-    testCompile testDpn.mockito
-    testCompile testDpn.robolectric
-    testCompile testDpn.robolectricShadowsHttpClient
-    testCompile testDpn.okhttpMockWebServer
+  testCompile testDpn.junit
+  testCompile testDpn.mockito
+  testCompile testDpn.robolectric
+  testCompile testDpn.robolectricShadowsHttpClient
+  testCompile testDpn.okhttpMockWebServer
 }

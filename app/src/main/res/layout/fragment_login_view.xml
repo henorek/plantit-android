@@ -2,66 +2,74 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/plantit_activity_margin">
+    android:padding="@dimen/plantit_activity_margin"
+    >
 
-    <EditText
-        android:id="@+id/flv_login_field"
+  <EditText
+      android:id="@+id/flv_login_field"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_centerInParent="true"
+      android:background="@drawable/shape_text_edit_rounded_corners"
+      android:drawablePadding="5dp"
+      />
+
+  <com.henorek.plantit.ui.widgets.controls.LogoView
+      android:id="@+id/flv_logo_view"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_above="@id/flv_login_field"
+      android:layout_centerHorizontal="true"
+      android:layout_marginBottom="60dp"
+      android:gravity="center"
+      android:textSize="72sp"
+      />
+
+  <EditText
+      android:id="@+id/flv_password_field"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_below="@id/flv_login_field"
+      android:layout_centerInParent="true"
+      android:layout_marginTop="20dp"
+      android:background="@drawable/shape_text_edit_rounded_corners"
+      android:drawablePadding="5dp"
+      android:inputType="textPassword"
+      />
+
+  <LinearLayout
+      android:id="@+id/flv_social_login_buttons_bar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/flv_password_field"
+      android:layout_centerInParent="true"
+      android:layout_marginTop="20dp"
+      android:divider="@drawable/empty_tall_divider"
+      android:orientation="horizontal"
+      android:showDividers="middle"
+      >
+
+    <Button
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/shape_text_edit_rounded_corners"
-        android:drawablePadding="5dp" />
+        android:layout_weight="1"
+        android:background="@drawable/shape_button_login_rounded_corners"
+        />
 
-    <net.henorek.plantit.ui.widgets.controls.LogoView
-        android:id="@+id/flv_logo_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/flv_login_field"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="60dp"
-        android:gravity="center"
-        android:textSize="72sp" />
-
-    <EditText
-        android:id="@+id/flv_password_field"
+    <Button
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@id/flv_login_field"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/shape_text_edit_rounded_corners"
-        android:drawablePadding="5dp"
-        android:inputType="textPassword" />
+        android:layout_weight="1"
+        android:background="@drawable/shape_button_facebook_rounded_corners"
+        />
 
-    <LinearLayout
-        android:id="@+id/flv_social_login_buttons_bar"
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/flv_password_field"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
-        android:divider="@drawable/empty_tall_divider"
-        android:orientation="horizontal"
-        android:showDividers="middle">
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_button_googleplus_rounded_corners"
+        />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/shape_button_login_rounded_corners" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/shape_button_facebook_rounded_corners" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/shape_button_googleplus_rounded_corners" />
-
-    </LinearLayout>
+  </LinearLayout>
 
 </RelativeLayout>

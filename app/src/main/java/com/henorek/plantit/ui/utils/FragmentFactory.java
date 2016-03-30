@@ -9,25 +9,25 @@ import android.support.v4.app.Fragment;
  */
 public class FragmentFactory {
 
-    private static Fragment createFragmentByClassName(String className, Bundle bundle) {
-        try {
-            return createFragmentByClass(Class.forName(className), bundle);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            return null;
-        }
+  private static Fragment createFragmentByClassName(String className, Bundle bundle) {
+    try {
+      return createFragmentByClass(Class.forName(className), bundle);
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+      return null;
     }
+  }
 
-    public static Fragment createFragmentByClass(Class fragmentClass, Bundle bundle) {
-        Fragment fragment = null;
-        try {
-            fragment = (Fragment) fragmentClass.newInstance();
-            if (bundle != null) {
-                fragment.setArguments(bundle);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return fragment;
+  public static Fragment createFragmentByClass(Class fragmentClass, Bundle bundle) {
+    Fragment fragment = null;
+    try {
+      fragment = (Fragment) fragmentClass.newInstance();
+      if (bundle != null) {
+        fragment.setArguments(bundle);
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
     }
+    return fragment;
+  }
 }
