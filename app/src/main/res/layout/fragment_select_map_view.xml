@@ -12,7 +12,7 @@
       android:id="@+id/contentView"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:background="@color/plantit_bg"
+      android:background="@color/plantit_light_gray"
       android:enabled="false"
       android:paddingLeft="@dimen/plantit_activity_margin"
       android:paddingRight="@dimen/plantit_activity_margin"
@@ -22,7 +22,7 @@
         android:id="@+id/fsmv_select_map_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/plantit_bg"
+        android:background="@color/plantit_light_gray"
         />
 
   </android.support.v4.widget.SwipeRefreshLayout>

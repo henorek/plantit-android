@@ -8,8 +8,7 @@ import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public abstract class BaseRxPresenter<VIEW extends MvpLceView<MODEL>, MODEL>
-    extends MvpBasePresenter<VIEW> implements MvpPresenter<VIEW> {
+public abstract class BaseRxPresenter<VIEW extends MvpLceView<MODEL>, MODEL> extends MvpBasePresenter<VIEW> implements MvpPresenter<VIEW> {
 
   protected Subscriber<MODEL> subscriber;
 
@@ -46,7 +45,8 @@ public abstract class BaseRxPresenter<VIEW extends MvpLceView<MODEL>, MODEL>
       }
     };
 
-    observable.subscribeOn(Schedulers.io())
+    observable
+        .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(subscriber);
   }

@@ -2,8 +2,8 @@ package com.henorek.plantit.commons;
 
 import android.content.Context;
 import android.content.Intent;
-import com.henorek.plantit.ui.views.activities.MainScreenActivity;
-import com.henorek.plantit.ui.views.activities.MatchmakingActivity;
+import com.henorek.plantit.ui.main_screen.MainScreenActivity;
+import com.henorek.plantit.ui.main_screen.activities_screen.matchmaking_screen.MatchmakingActivity;
 
 public class Navigator {
 
